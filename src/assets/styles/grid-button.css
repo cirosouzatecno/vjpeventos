@@ -1,0 +1,82 @@
+.grid-button {
+	z-index: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-sizing: border-box;
+	max-width: 100%;
+	width: 100%;
+	height: min-content;
+	min-height: var(--grid-button-primary-min-height, auto);
+	padding:
+		calc(var(--grid-button-primary-padding-y, 12px) - var(--border-width, 0px))
+		calc(var(--grid-button-primary-padding-x, 24px) - var(--border-width, 0px));
+	overflow: hidden;
+	font-family: var(--font-family, var(--grid-button-primary-font-family, inherit));
+	font-size: var(--font-size-desktop, var(--grid-button-primary-font-size, 16px));
+	font-style: var(--grid-button-primary-font-style, normal);
+	font-weight: var(--font-weight, var(--grid-button-primary-font-weight, 500));
+	line-height: var(--grid-button-primary-line-height, 1.2);
+	color: var(--font-color, var(--grid-button-primary-color, #fff));
+	text-align: center;
+	text-decoration: none;
+	text-overflow: ellipsis;
+	text-transform: var(--grid-button-primary-text-transform, none);
+	letter-spacing: var(--grid-button-primary-letter-spacing, normal);
+	white-space: nowrap;
+	cursor: pointer;
+	background-color: var(--background-color, var(--grid-button-primary-background-color, #000));
+	border: var(--border-width, 0px) solid var(--border-color, var(--grid-button-primary-border-color, transparent));
+	border-radius: var(--border-radius, var(--grid-button-primary-border-radius, 4px));
+	transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.grid-button:hover {
+	color: var(--font-color-hover, var(--grid-button-primary-color-hover, var(--font-color, #fff)));
+	background-color: var(--background-color-hover, var(--grid-button-primary-background-color-hover, var(--background-color, #000)));
+	border-color: var(--border-color-hover, var(--grid-button-primary-border-color-hover, var(--border-color, transparent)));
+}
+
+.grid-button--secondary {
+	border-width: 1px;
+	min-height: var(--grid-button-secondary-min-height, auto);
+	padding:
+		calc(var(--grid-button-secondary-padding-y, 12px) - var(--border-width, 0px))
+		calc(var(--grid-button-secondary-padding-x, 24px) - var(--border-width, 0px));
+	font-family: var(--font-family, var(--grid-button-secondary-font-family, inherit));
+	font-size: var(--font-size-desktop, var(--grid-button-secondary-font-size, 16px));
+	font-weight: var(--font-weight, var(--grid-button-secondary-font-weight, 500));
+	color: var(--font-color, var(--grid-button-secondary-color, #000));
+	background-color: var(--background-color, var(--grid-button-secondary-background-color, transparent));
+	border-color: var(--grid-button-secondary-border-color, rgb(139, 105, 20));
+	border-radius: var(--border-radius, var(--grid-button-secondary-border-radius, 4px));
+}
+
+.grid-button--secondary:hover {
+	color: var(--font-color-hover, var(--grid-button-secondary-color-hover, var(--font-color, #000)));
+	background-color: var(--background-color-hover, var(--grid-button-secondary-background-color-hover, var(--background-color, transparent)));
+	border-color: var(--grid-button-secondary-border-color-hover, rgb(139, 105, 20));
+}
+
+.grid-button--empty::after {
+	content: '\00A0';
+}
+
+.grid-button:disabled,
+.grid-button.loading {
+	cursor: default;
+	opacity: 0.4;
+	pointer-events: none;
+}
+
+@media screen and (max-width: 920px) {
+	.grid-button {
+		width: var(--m-width, 100%);
+		height: var(--m-height, min-content);
+		font-size: var(--font-size-mobile, var(--grid-button-primary-m-font-size, var(--grid-button-primary-font-size, 16px)));
+	}
+
+	.grid-button--secondary {
+		font-size: var(--font-size-mobile, var(--grid-button-secondary-m-font-size, var(--grid-button-secondary-font-size, 16px)));
+	}
+}

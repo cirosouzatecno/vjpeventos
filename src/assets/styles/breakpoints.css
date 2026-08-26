@@ -1,0 +1,12 @@
+:root {
+	/* Grid / flex change point (max-width for mobile) */
+	--media-mobile: 920px;
+	/* Desktop layout editor width */
+	--media-desktop-editor: 1224px;
+	/* Mobile layout editor width */
+	--media-mobile-editor: 360px;
+	/* Tablet upper bound used by layout-element button wrap */
+	--media-tablet: 1191px;
+	--media-sm-mobile: 576px;
+	--media-md-mobile: 768px;
+}

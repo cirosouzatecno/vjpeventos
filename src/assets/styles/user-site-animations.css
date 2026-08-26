@@ -1,0 +1,351 @@
+/* Port of site-modules _user-site-animations.scss (plain CSS). */
+
+.transition.transition--fade:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: opacity;
+}
+
+.transition.transition--fade:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--slide:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(0%, 20%);
+}
+
+.transition.transition--slide:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transform: translate(0%, 0%);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--scale:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: scale(0.9);
+}
+
+.transition.transition--scale:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transform: scale(1);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--slide-left:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(-8%, 0%);
+}
+
+.transition.transition--slide-left:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transform: translate(0%, 0%);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--slide-right:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(8%, 0%);
+}
+
+.transition.transition--slide-right:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transform: translate(0%, 0%);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--blur:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: transform, opacity, filter;
+	transform: translate(0%, 6%);
+	filter: blur(12px);
+}
+
+.transition.transition--blur:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transform: translate(0%, 0%);
+	filter: blur(0);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--rise:not(.transition--root-hidden) {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(0%, 32%) scale(0.98);
+}
+
+.transition.transition--rise:not(.transition--root-hidden)[data-animation-state="active"] {
+	opacity: 1;
+	transform: translate(0%, 0%) scale(1);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.transition.transition--root-hidden.transition--fade [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--fade [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: opacity;
+}
+
+.transition.transition--root-hidden.transition--slide [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--slide [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(0%, 20%);
+}
+
+.transition.transition--root-hidden.transition--scale [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--scale [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: scale(0.9);
+}
+
+.transition.transition--root-hidden.transition--slide-left [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--slide-left [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(-8%, 0%);
+}
+
+.transition.transition--root-hidden.transition--slide-right [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--slide-right [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(8%, 0%);
+}
+
+.transition.transition--root-hidden.transition--blur [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--blur [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: transform, opacity, filter;
+	transform: translate(0%, 6%);
+	filter: blur(12px);
+}
+
+.transition.transition--root-hidden.transition--rise [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--rise [data-animation-role="image"] {
+	opacity: 0;
+	transition-property: transform, opacity;
+	transform: translate(0%, 32%) scale(0.98);
+}
+
+.transition.transition--root-hidden [data-animation-role="block-element"][data-animation-state="active"],
+.transition.transition--root-hidden [data-animation-role="image"][data-animation-state="active"].loaded {
+	opacity: 1;
+	transform: translate(0%, 0%) scale(1);
+	filter: blur(0);
+	transition-delay: var(--user-animation-delay, 0.1s);
+	transition-timing-function: ease;
+	transition-duration: 0.65s;
+}
+
+.hover--lift,
+.hover--grow,
+.hover--glow {
+	transition:
+		translate 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+		scale 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+		box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+		filter 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover--glow {
+	border-radius: var(--u-hover-border-radius, 0);
+}
+
+.hover--shine {
+	position: relative;
+}
+
+.hover--shine::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: var(--u-hover-border-radius, inherit);
+	pointer-events: none;
+	background: linear-gradient(100deg, transparent 30%, rgb(255 255 255 / 35%) 50%, transparent 70%);
+	background-size: 220% 100%;
+	background-position: 150% 0;
+	opacity: 0;
+	transition: background-position 0.7s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.2s ease;
+}
+
+.hover--border {
+	border-radius: var(--u-hover-border-radius, 0);
+	transition: box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes user-hover-border-glow {
+	0%,
+	100% {
+		box-shadow:
+			0 0 0 var(--u-hover-border-width, 2px) var(--u-hover-border-color, currentcolor),
+			0 0 calc(var(--u-hover-border-width, 2px) * 4) var(--u-hover-border-color, currentcolor);
+	}
+
+	50% {
+		box-shadow:
+			0 0 0 var(--u-hover-border-width, 2px) var(--u-hover-border-color, currentcolor),
+			0 0 calc(var(--u-hover-border-width, 2px) * 9) var(--u-hover-border-color, currentcolor);
+	}
+}
+
+@media (hover: hover) {
+	.hover--lift:hover {
+		translate: 0 -6px;
+		box-shadow: 0 18px 38px -18px rgb(0 0 0 / 45%);
+	}
+
+	.hover--grow:hover {
+		scale: 1.04;
+	}
+
+	.hover--glow:hover {
+		box-shadow: 0 8px 30px -6px rgb(0 0 0 / 35%);
+		filter: brightness(1.03);
+	}
+
+	.hover--shine:hover::after {
+		background-position: -50% 0;
+		opacity: 1;
+	}
+
+	.hover--border:hover {
+		box-shadow: 0 0 0 var(--u-hover-border-width, 2px) var(--u-hover-border-color, currentcolor);
+	}
+
+	.hover--border-glow:hover {
+		box-shadow:
+			0 0 0 var(--u-hover-border-width, 2px) var(--u-hover-border-color, currentcolor),
+			0 0 calc(var(--u-hover-border-width, 2px) * 6) var(--u-hover-border-color, currentcolor);
+		animation: user-hover-border-glow 1.8s ease-in-out infinite;
+	}
+}
+
+@keyframes user-loop-float {
+	0%, 100% { translate: 0 0; }
+	50% { translate: 0 -8px; }
+}
+
+@keyframes user-loop-pulse {
+	0%, 100% { scale: 1; }
+	50% { scale: 1.04; }
+}
+
+@keyframes user-loop-wobble {
+	0%, 100% { rotate: 0deg; }
+	25% { rotate: -3deg; }
+	75% { rotate: 3deg; }
+}
+
+.loop--float { animation: user-loop-float 3.4s ease-in-out infinite; }
+.loop--pulse { animation: user-loop-pulse 2.6s ease-in-out infinite; }
+.loop--wobble { animation: user-loop-wobble 3s ease-in-out infinite; }
+
+@keyframes user-text-shimmer {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+.text-shimmer .text-box :is(h1, h2, h3, h4, h5, h6, p, a, li, blockquote, span, strong, em, b, i, u, mark, small, code) {
+	background-image: linear-gradient(
+		100deg,
+		currentcolor 42%,
+		var(--u-text-shimmer-highlight, rgb(255 255 255 / 85%)) 50%,
+		currentcolor 58%
+	);
+	background-repeat: no-repeat;
+	background-size: 250% 100%;
+	background-position: 0 0;
+	background-clip: text;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	animation: user-text-shimmer 2.6s ease-in-out 0.35s 1 both;
+}
+
+.text-shimmer--loop .text-box :is(h1, h2, h3, h4, h5, h6, p, a, li, blockquote, span, strong, em, b, i, u, mark, small, code) {
+	animation: user-text-shimmer 3s linear 0.35s infinite both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.loop--float,
+	.loop--pulse,
+	.loop--wobble,
+	.hover--border-glow:hover {
+		animation: none;
+	}
+
+	.text-shimmer .text-box :is(h1, h2, h3, h4, h5, h6, p, a, li, blockquote, span, strong, em, b, i, u, mark, small, code) {
+		animation: none;
+		background-image: none;
+		-webkit-text-fill-color: currentcolor;
+	}
+
+	.hover--lift,
+	.hover--grow,
+	.hover--glow,
+	.hover--border {
+		transition: none;
+	}
+
+	.hover--lift:hover,
+	.hover--grow:hover,
+	.hover--glow:hover {
+		translate: none;
+		scale: none;
+		box-shadow: none;
+		filter: none;
+	}
+
+	.hover--shine::after {
+		transition: none;
+	}
+
+	.hover--shine:hover::after {
+		background-position: 150% 0;
+		opacity: 0;
+	}
+}
+
+@media screen and (max-width: 920px) {
+	.hover--border,
+	.hover--glow {
+		border-radius: var(--u-hover-border-radius-m, var(--u-hover-border-radius, 0));
+	}
+
+	.hover--shine::after {
+		border-radius: var(--u-hover-border-radius-m, var(--u-hover-border-radius, inherit));
+	}
+}
+
+/* Jardin Soir motion tuning (Agosto 2026) */
+.transition:not(.transition--root-hidden)[data-animation-state="active"],
+.transition.transition--root-hidden [data-animation-role="block-element"][data-animation-state="active"],
+.transition.transition--root-hidden [data-animation-role="image"][data-animation-state="active"].loaded {
+	transition-duration: 0.55s;
+	transition-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.transition.transition--slide:not(.transition--root-hidden),
+.transition.transition--root-hidden.transition--slide [data-animation-role="block-element"],
+.transition.transition--root-hidden.transition--slide [data-animation-role="image"] {
+	transform: translate(0%, 28%);
+}
