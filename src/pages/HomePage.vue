@@ -30,7 +30,7 @@
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 1, '--grid-row': '2/3', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="zPDJEu"
-            src="https://www.youtube.com/embed/m7OETuDX684?h=null&playlist=m7OETuDX684&autoplay=1&controls=0&loop=1&autopause=0&playsinline=1&mute=0"
+            src="https://www.youtube.com/embed/m7OETuDX684?h=null&playlist=m7OETuDX684&autoplay=1&controls=0&loop=1&autopause=0&playsinline=1&mute=1"
             provider="youtube"
             jpg="https://i.ytimg.com/vi/m7OETuDX684/hqdefault.jpg"
             webp="https://i.ytimg.com/vi_webp/m7OETuDX684/hqdefault.webp"
