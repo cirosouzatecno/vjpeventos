@@ -1,0 +1,6 @@
+{
+  "name": "Le Jardin Eventos",
+  "description": "Imported from GitHub repository cirosouzatecno/vjpeventos.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
