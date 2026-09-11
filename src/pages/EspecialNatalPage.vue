@@ -7,7 +7,7 @@
     googleFontsHref="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
     customFontsCss=""
   >
-    <Header />
+    <Header :isTransparent="false" />
     <div class="page__blocks">
       <main class="natal-page">
         <section class="natal-hero" aria-labelledby="natal-title">
