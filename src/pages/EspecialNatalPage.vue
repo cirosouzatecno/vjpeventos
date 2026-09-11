@@ -26,14 +26,14 @@
             <p class="natal-gallery__hint">Clique em qualquer imagem para visualizar em tamanho maior.</p>
           </div>
           <div class="natal-gallery__grid">
-            <button v-for="image in galleryImages" :key="image.id" type="button" class="natal-card" :class="{'natal-card--featured': image.featured}" :aria-label="\`Visualizar \${image.alt} em tamanho maior\`" @click="openLightbox(image)">
+            <button v-for="image in galleryImages" :key="image.id" type="button" class="natal-card" :class="{'natal-card--featured': image.featured}" :aria-label="'Visualizar ' + image.alt + ' em tamanho maior'" @click="openLightbox(image)">
               <span class="natal-card__media"><img :src="image.src" :alt="image.alt" loading="lazy" /><span class="natal-card__zoom" aria-hidden="true">＋</span></span>
               <span class="natal-card__caption">{{ image.caption }}</span>
             </button>
           </div>
         </section>
 
-        <div v-if="activeImage" class="natal-lightbox" role="dialog" aria-modal="true" :aria-label="\`Imagem ampliada: \${activeImage.alt}\`" tabindex="-1" @click.self="closeLightbox" @keydown.esc="closeLightbox">
+        <div v-if="activeImage" class="natal-lightbox" role="dialog" aria-modal="true" :aria-label="'Imagem ampliada: ' + activeImage.alt" tabindex="-1" @click.self="closeLightbox" @keydown.esc="closeLightbox">
           <button type="button" class="natal-lightbox__close" aria-label="Fechar imagem ampliada" @click="closeLightbox">×</button>
           <figure class="natal-lightbox__figure"><img :src="activeImage.src" :alt="activeImage.alt" /><figcaption>{{ activeImage.caption }}</figcaption></figure>
         </div>
