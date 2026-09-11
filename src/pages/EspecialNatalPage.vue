@@ -59,14 +59,12 @@ import image6 from '@/assets/natal/6.jpg'
 import image7 from '@/assets/natal/7.jpg'
 import image8 from '@/assets/natal/8.jpg'
 import image9 from '@/assets/natal/9.jpg'
-import image10 from '@/assets/natal/10.jpg'
 import image11 from '@/assets/natal/11.jpg'
 
 useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Especial Natal | Le Jardin Eventos', meta: [{ name: 'description', content: 'Galeria de inspirações natalinas da Le Jardin Eventos.' }] })
 
 const galleryImages = [
   { id: 11, src: image11, alt: 'Árvore de Natal com laços vermelhos e luzes douradas', caption: 'Natal clássico em vermelho e dourado', featured: true },
-  { id: 10, src: image10, alt: 'Decoração natalina com guirlanda e Papai Noel', caption: 'Guirlanda iluminada e detalhes tradicionais' },
   { id: 9, src: image9, alt: 'Árvore de Natal decorada em tons de rosa e dourado', caption: 'Elegância em rosa, dourado e luzes' },
   { id: 8, src: image8, alt: 'Árvore de Natal com personagens e laços vermelhos', caption: 'Uma celebração lúdica e afetiva' },
   { id: 7, src: image7, alt: 'Guirlanda natalina em porta verde', caption: 'Boas-vindas à mesa e à casa' },
