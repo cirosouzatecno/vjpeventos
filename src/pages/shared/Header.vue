@@ -3,7 +3,7 @@
     :logoSrc="'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/logo-white-Ylezjj9v1rIqvyJm.svg'"
     logoText="Le Jardin Eventos"
     logoHref="/"
-    :isLogoVisible="false"
+    :isLogoVisible="true"
     layout="desktop-3"
     mobileLayout="mobile-1"
     mobileLinksAlignment="right"
