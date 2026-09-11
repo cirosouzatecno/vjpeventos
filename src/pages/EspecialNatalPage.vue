@@ -92,22 +92,22 @@ onBeforeUnmount(() => { document.body.style.overflow = '' })
 .natal-hero:before{right:8%;top:-48%;width:640px;height:900px}
 .natal-hero:after{right:18%;bottom:-64%;width:440px;height:700px;border-color:rgba(200,92,58,.35)}
 .natal-hero__content{position:relative;z-index:1;max-width:680px}
-.natal-kicker{margin:0;color:rgb(196,164,74);font:500 13px/1.5 var(--font-secondary);letter-spacing:.18em;text-transform:uppercase}
-.natal-kicker--dark{color:rgb(139,105,20)}
+.natal-kicker{margin:0;color:rgb(242,237,229);font:500 13px/1.5 var(--font-secondary);letter-spacing:.18em;text-transform:uppercase}
+.natal-kicker--dark{color:rgb(242,237,229)}
 .natal-hero h1,.natal-gallery h2{margin:18px 0 0;font-family:var(--font-primary);font-weight:400;letter-spacing:.01em;line-height:.95}
 .natal-hero h1{color:rgb(242,237,229);font-size:clamp(4.5rem,10vw,9rem);font-style:italic}
 .natal-hero__text{max-width:540px;margin:30px 0 0;color:rgba(242,237,229,.78);font:300 18px/1.7 var(--font-secondary)}
 .natal-hero__link{display:inline-flex;gap:14px;margin-top:34px;padding-bottom:8px;border-bottom:1px solid rgb(196,164,74);color:rgb(242,237,229);font:500 13px var(--font-secondary);letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:gap 180ms ease,color 180ms ease}
 .natal-hero__link:hover,.natal-hero__link:focus-visible{gap:20px;color:rgb(196,164,74)}
-.natal-hero__seal{display:grid;width:210px;height:210px;flex:0 0 auto;place-content:center;text-align:center;border:1px solid rgba(196,164,74,.6);border-radius:50%;color:rgb(196,164,74);transform:rotate(8deg)}
+.natal-hero__seal{display:grid;width:210px;height:210px;flex:0 0 auto;place-content:center;text-align:center;border:1px solid rgba(196,164,74,.6);border-radius:50%;color:rgb(242,237,229);transform:rotate(8deg)}
 .natal-hero__seal span,.natal-hero__seal small{font:11px var(--font-secondary);letter-spacing:.2em;text-transform:uppercase}
 .natal-hero__seal strong{margin:4px 0;font:italic 400 48px var(--font-primary)}
-.natal-gallery{padding:100px max(6vw,32px) 120px;background:rgb(242,237,229);color:rgb(15,26,18)}
+.natal-gallery{padding:100px max(6vw,32px) 120px;background:rgb(1,36,14);color:rgb(242,237,229)}
 .natal-gallery__intro{display:flex;align-items:end;justify-content:space-between;gap:36px;max-width:1224px;margin:0 auto 52px}
-.natal-gallery h2{max-width:600px;color:rgb(15,26,18);font-size:clamp(2.8rem,5vw,5rem)}
-.natal-gallery__hint{max-width:250px;margin:0 0 6px;color:rgb(100,91,81);font:14px/1.7 var(--font-secondary);text-align:right}
+.natal-gallery h2{max-width:600px;color:rgb(242,237,229);font-size:clamp(2.8rem,5vw,5rem)}
+.natal-gallery__hint{max-width:250px;margin:0 0 6px;color:rgba(242,237,229,.78);font:14px/1.7 var(--font-secondary);text-align:right}
 .natal-gallery__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1224px;margin:0 auto}
-.natal-card{display:block;min-width:0;padding:0;color:rgb(15,26,18);text-align:left;cursor:zoom-in}
+.natal-card{display:block;min-width:0;padding:0;color:rgb(242,237,229);text-align:left;cursor:zoom-in}
 .natal-card--featured{grid-column:span 2}
 .natal-card__media{position:relative;display:block;overflow:hidden;aspect-ratio:4/5;background:rgb(225,216,200)}
 .natal-card--featured .natal-card__media{aspect-ratio:16/10}
@@ -117,7 +117,7 @@ onBeforeUnmount(() => { document.body.style.overflow = '' })
 .natal-card:hover .natal-card__media:after,.natal-card:focus-visible .natal-card__media:after{opacity:1}
 .natal-card__zoom{position:absolute;right:18px;bottom:16px;z-index:1;display:grid;width:36px;height:36px;place-items:center;border:1px solid rgba(242,237,229,.72);border-radius:50%;color:rgb(242,237,229);font:300 23px var(--font-secondary);opacity:0;transition:opacity 220ms ease,transform 220ms ease}
 .natal-card:hover .natal-card__zoom,.natal-card:focus-visible .natal-card__zoom{opacity:1;transform:translateY(-4px)}
-.natal-card__caption{display:block;padding:16px 4px 0;color:rgb(15,26,18);font:24px/1.05 var(--font-primary)}
+.natal-card__caption{display:block;padding:16px 4px 0;color:rgb(242,237,229);font:24px/1.05 var(--font-primary)}
 .natal-lightbox{position:fixed;inset:0;z-index:50;display:grid;place-items:center;padding:28px;background:rgba(1,15,8,.94);animation:natal-fade-in 180ms ease-out}
 .natal-lightbox__figure{display:grid;max-width:min(94vw,1180px);max-height:94vh;margin:0;justify-items:center}
 .natal-lightbox__figure img{display:block;width:auto;max-width:92vw;max-height:84vh;object-fit:contain}
