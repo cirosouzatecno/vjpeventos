@@ -10,6 +10,7 @@ const routes = [
   { path: '/aniversario', component: () => import('@/pages/AniversarioPage.vue') },
   { path: '/decoracao-residencial', component: () => import('@/pages/DecoracaoResidencialPage.vue') },
   { path: '/sobre-nos', component: () => import('@/pages/SobreNosPage.vue') },
+  { path: '/especial-natal', component: () => import('@/pages/EspecialNatalPage.vue') },
 ]
 
 const router = createRouter({
