@@ -7,8 +7,8 @@
     googleFontsHref="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
     customFontsCss=""
   >
-    <Header />
-    <div class="page__blocks natal-page__blocks">
+    <Header :isTransparent="false" />
+    <div class="page__blocks">
       <main class="natal-page">
         <section class="natal-hero" aria-labelledby="natal-title">
           <div class="natal-hero__content">
@@ -84,7 +84,6 @@ onBeforeUnmount(() => { document.body.style.overflow = '' })
 </script>
 
 <style scoped>
-.natal-page__blocks{padding-top:var(--header-height-mobile,var(--header-height,0));margin-top:calc(-1 * var(--header-height-mobile,var(--header-height,0)))}
 .natal-page{background:rgb(1,36,14);color:rgb(242,237,229)}
 .natal-hero{position:relative;display:flex;min-height:560px;align-items:center;justify-content:space-between;gap:56px;overflow:hidden;padding:120px max(6vw,32px) 104px;isolation:isolate;background:radial-gradient(circle at 84% 28%,rgba(196,164,74,.24),transparent 34%),linear-gradient(115deg,rgba(1,36,14,.98),rgba(15,26,18,.72))}
 .natal-hero:before,.natal-hero:after{position:absolute;content:'';pointer-events:none;border:1px solid rgba(196,164,74,.32);border-radius:999px;transform:rotate(-16deg)}
