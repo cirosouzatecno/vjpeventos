@@ -8,7 +8,7 @@
     mobileLayout="mobile-1"
     mobileLinksAlignment="right"
     :isSticky="true"
-    :isTransparent="true"
+    :isTransparent="isTransparent"
     :style="navStyle"
     :nav="navLinks"
     :socialIcons="socialIconsData"
@@ -17,6 +17,10 @@
 
 <script setup>
 import BlockNavigation from '@/components/builder/blocks/BlockNavigation.vue'
+
+const props = defineProps({
+  isTransparent: { type: Boolean, default: true },
+})
 
 const navStyle = {
   '--width': '1240px',
