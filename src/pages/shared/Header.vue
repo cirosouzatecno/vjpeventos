@@ -1,6 +1,6 @@
 <template>
   <BlockNavigation
-    :logoSrc="'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/logo-white-Ylezjj9v1rIqvyJm.svg'"
+    :logoSrc="''"
     logoText="Le Jardin Eventos"
     logoHref="/"
     :isLogoVisible="true"
