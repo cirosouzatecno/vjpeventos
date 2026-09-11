@@ -1,7 +1,8 @@
 <template>
   <BlockNavigation
-    :logoSrc="''"
-    logoText="Le Jardin Eventos"
+    :logoSrc="logoImage"
+    logoText=""
+    logoAlt="VJ Projetos Especiais Produções"
     logoHref="/"
     :isLogoVisible="true"
     layout="desktop-3"
@@ -17,6 +18,7 @@
 
 <script setup>
 import BlockNavigation from '@/components/builder/blocks/BlockNavigation.vue'
+import logoImage from '@/assets/logo-vj-projetos.webp'
 
 const props = defineProps({
   isTransparent: { type: Boolean, default: true },
