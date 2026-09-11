@@ -46,6 +46,7 @@ const navLinks = [
   { id: 'zctDB9', href: '/aniversario', text: 'Aniversario', isHidden: false, hasDropdown: false },
   { id: 'z515zU', href: '/decoracao-residencial', text: 'Decoração Residencial', isHidden: false, hasDropdown: false },
   { id: 'z41nUY', href: '/sobre-nos', text: 'Sobre nós', isHidden: false, hasDropdown: false },
+  { id: 'especial-natal', href: '/especial-natal', text: 'Especial Natal', isHidden: false, hasDropdown: false },
 ]
 
 const socialIconsData = {
