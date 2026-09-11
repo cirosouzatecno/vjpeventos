@@ -10,16 +10,6 @@
     <Header :isTransparent="false" />
     <div class="page__blocks">
       <main class="natal-page">
-        <section class="natal-hero" aria-labelledby="natal-title">
-          <div class="natal-hero__content">
-            <p class="natal-kicker">Le Jardin Eventos · coleção sazonal</p>
-            <h1 id="natal-title">Especial Natal</h1>
-            <p class="natal-hero__text">Uma seleção de decorações natalinas para inspirar celebrações cheias de luz, afeto e detalhes marcantes.</p>
-            <a class="natal-hero__link" href="#galeria-natal">Explorar a galeria <span aria-hidden="true">↓</span></a>
-          </div>
-          <div class="natal-hero__seal" aria-hidden="true"><span>feliz</span><strong>Natal</strong><small>Le Jardin</small></div>
-        </section>
-
         <section id="galeria-natal" class="natal-gallery" aria-labelledby="galeria-title">
           <div class="natal-gallery__intro">
             <div><p class="natal-kicker natal-kicker--dark">Inspirações</p><h2 id="galeria-title">Detalhes que aquecem a celebração</h2></div>
