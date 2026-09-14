@@ -49,6 +49,7 @@ const navLinks = [
   { id: 'zFoU1B', href: '/batizado', text: 'Batizado', isHidden: false, hasDropdown: false },
   { id: 'zXRmaY', href: '/15-anos', text: '15 Anos', isHidden: false, hasDropdown: false },
   { id: 'zUx4YB', href: '/casamento', text: 'Casamento', isHidden: false, hasDropdown: false },
+  { id: 'cerimonia', href: '/cerimonia', text: 'Cerimônia', isHidden: false, hasDropdown: false },
   { id: 'zctDB9', href: '/aniversario', text: 'Aniversario', isHidden: false, hasDropdown: false },
   { id: 'z515zU', href: '/decoracao-residencial', text: 'Decoração Residencial', isHidden: false, hasDropdown: false },
   { id: 'z41nUY', href: '/sobre-nos', text: 'Sobre nós', isHidden: false, hasDropdown: false },
