@@ -1,27 +1,29 @@
 <template>
-  <Page pageId="cerimonia" locale="system" :cssVars="cssVars" :pageStyle="cssVars"
-    googleFontsHref="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap">
-    <Header :isTransparent="false" />
-    <main class="cerimonia-page">
-      <section class="cerimonia-hero" aria-labelledby="cerimonia-title">
-        <div class="cerimonia-hero__content">
-          <p class="cerimonia-kicker">Celebrações com significado</p>
-          <h1 id="cerimonia-title">Cerimônia</h1>
-          <p class="cerimonia-hero__text">Cada detalhe preparado para acolher histórias, encontros e momentos que permanecem para sempre.</p>
-        </div>
-        <div class="cerimonia-hero__mark" aria-hidden="true"><span>Le Jardin</span><strong>amor</strong><span>em cada detalhe</span></div>
-      </section>
-      <section class="cerimonia-videos" aria-labelledby="videos-title">
-        <div class="cerimonia-section-heading"><div><p class="cerimonia-kicker">Inspirações</p><h2 id="videos-title">Momentos para guardar</h2></div><p>Uma seleção de cenas para inspirar a sua próxima celebração.</p></div>
-        <div class="cerimonia-video-grid">
-          <article v-for="video in videos" :key="video.src" class="cerimonia-video-card">
-            <div class="cerimonia-video-frame"><video :src="video.src" controls playsinline preload="metadata" :aria-label="video.title"></video></div>
-            <h3>{{ video.title }}</h3><p>{{ video.description }}</p>
-          </article>
-        </div>
-      </section>
-    </main>
-    <Footer />
+  <Page pageId="zMTp8J" locale="system" :cssVars="cssVars" :pageStyle="cssVars"
+    googleFontsHref="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap"
+    customFontsCss="">
+    <Header />
+    <div class="page__blocks">
+      <BlockLayout blockId="zHa_Do" htmlId="zHa_Do"
+        blockClassName="block block--desktop-first-visible block--mobile-first-visible"
+        innerClassName="block-layout block-layout--layout"
+        :blockStyle="heroStyle" :background="heroBg" />
+
+      <BlockLayout blockId="zqmYav" htmlId="zqmYav" blockClassName="block"
+        innerClassName="block-layout block-layout--layout"
+        :blockStyle="s2Style" :background="darkBg" :isFixed="true">
+        <LayoutElement elementId="zOO3Aj" className="layout-element layout-element--layout"
+          :style="{'--text':'left','--align':'flex-start','--m-text':'center','--justify':'flex-start','--m-element-margin':'0 0 16px 0','--z-index':1,'--grid-row':'2/3','--grid-column':'3/7','--m-grid-row':'2/3','--m-grid-column':'1/2'}">
+          <GridTextBox id="zOO3Aj" :content="s2Title" textAlign="left" textAlignMobile="center" />
+        </LayoutElement>
+        <LayoutElement v-for="video in videos" :key="video.id" :elementId="video.id" className="layout-element layout-element--layout ceremony-video-element"
+          :style="video.style" :hasRotationFrame="false" :hasEntranceAnimation="false">
+          <video class="ceremony-video" :src="video.src" controls playsinline preload="metadata" :aria-label="video.label" />
+        </LayoutElement>
+      </BlockLayout>
+
+      <Footer />
+    </div>
   </Page>
 </template>
 
@@ -30,17 +32,45 @@ import { useHead } from '@unhead/vue'
 import Page from '@/components/builder/Page.vue'
 import Header from '@/pages/shared/Header.vue'
 import Footer from '@/pages/shared/Footer.vue'
-import { cssVars } from './shared/pageCommons.js'
+import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
+import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
+import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
+import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
 
-useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Cerimônia | Le Jardin Eventos', meta: [{ name: 'description', content: 'Inspirações para cerimônias da Le Jardin Eventos.' }] })
+useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Cerimônias | Le Jardin Eventos' })
+
+const s2Title = '<h3 dir="auto" style="color: rgb(255, 255, 255); --lineHeightMobile: 1.3; --fontSizeMobile: 24px;">Cerimônias</h3>'
+const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }
 
 const videos = [
-  { src: '/videos/cerimonia-1.mp4', title: 'A beleza do encontro', description: 'Atmosferas pensadas para celebrar o começo de uma nova história.' },
-  { src: '/videos/cerimonia-2.mp4', title: 'Detalhes que emocionam', description: 'Cenários acolhedores, flores e luz para tornar o momento inesquecível.' },
+  {
+    id: 'cerimonia-1',
+    src: '/videos/cerimonia-1.mp4',
+    label: 'Vídeo de cerimônia 1',
+    style: {'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':2,'--grid-row':'5/7','--grid-column':'1/4','--m-grid-row':'4/5','--m-grid-column':'1/2'},
+  },
+  {
+    id: 'cerimonia-2',
+    src: '/videos/cerimonia-2.mp4',
+    label: 'Vídeo de cerimônia 2',
+    style: {'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':3,'--grid-row':'4/6','--grid-column':'5/8','--m-grid-row':'6/7','--m-grid-column':'1/2'},
+  },
 ]
+
+const s2Style = {
+  '--block-padding': '16px 0 16px 0', '--m-block-padding': '16px',
+  '--m-grid-template-rows': '6.67vw auto 6.94vw 75.00vw 4.44vw 75.00vw 37.87863159179676px',
+  '--t-grid-template-rows': 'minmax(24px, auto) minmax(31px, auto) minmax(25px, auto) minmax(270px, auto) minmax(16px, auto) minmax(270px, auto) 1fr',
+  '--small-desktop-grid-template-rows': 'minmax(3.76vw, auto) minmax(4.74vw, auto) minmax(4.08vw, auto) minmax(0.33vw, auto) minmax(21.73vw, auto) minmax(0.33vw, auto) minmax(5.07vw, auto) minmax(22.06vw, auto) 28.84vw',
+  '--grid-template-rows': 'minmax(46px, auto) minmax(58px, auto) minmax(50px, auto) minmax(4px, auto) minmax(266px, auto) minmax(4px, auto) minmax(62px, auto) minmax(270px, auto) 1fr',
+  '--m-grid-template-columns': '100.00%',
+  '--grid-template-columns': '25.25% 11.85% 2.12% 10.78% 14.46% 5.31% 19.44% 10.78%',
+  '--m-block-min-height': 'auto', '--t-block-min-height': '959.8786315917968px',
+  '--small-desktop-block-min-height': 'auto', '--block-min-height': '1113px',
+}
 </script>
 
 <style scoped>
-.cerimonia-page{background:#f2ede5;color:#10291a}.cerimonia-hero{display:flex;min-height:520px;align-items:center;justify-content:space-between;gap:48px;padding:120px max(7vw,28px) 88px;background:radial-gradient(circle at 80% 35%,rgba(196,164,74,.25),transparent 30%),linear-gradient(125deg,#01240e,#153b25);color:#f2ede5}.cerimonia-hero__content{max-width:700px}.cerimonia-kicker{margin:0;color:#c4a44a;font:500 12px/1.5 var(--font-secondary);letter-spacing:.2em;text-transform:uppercase}.cerimonia-hero h1{margin:18px 0 0;font:italic 400 clamp(5rem,12vw,10rem)/.82 var(--font-primary);letter-spacing:.01em}.cerimonia-hero__text{max-width:550px;margin:30px 0 0;color:rgba(242,237,229,.8);font:300 18px/1.7 var(--font-secondary)}.cerimonia-hero__mark{display:grid;width:210px;height:210px;flex:0 0 auto;place-content:center;text-align:center;border:1px solid rgba(196,164,74,.65);border-radius:50%;transform:rotate(8deg);color:#f2ede5;font:11px var(--font-secondary);letter-spacing:.16em;text-transform:uppercase}.cerimonia-hero__mark strong{margin:5px 0;font:italic 400 49px var(--font-primary);letter-spacing:0;text-transform:none}.cerimonia-videos{padding:92px max(7vw,28px) 110px}.cerimonia-section-heading{display:flex;align-items:end;justify-content:space-between;gap:36px;max-width:1220px;margin:0 auto 48px}.cerimonia-section-heading h2{margin:14px 0 0;font:400 clamp(3rem,6vw,5.5rem)/.9 var(--font-primary);color:#10291a}.cerimonia-section-heading>p{max-width:260px;margin:0 0 4px;color:rgba(16,41,26,.7);font:14px/1.7 var(--font-secondary);text-align:right}.cerimonia-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:30px;max-width:1220px;margin:0 auto}.cerimonia-video-frame{overflow:hidden;background:#10291a;aspect-ratio:16/10}.cerimonia-video-frame video{display:block;width:100%;height:100%;object-fit:cover}.cerimonia-video-card h3{margin:18px 0 0;font:400 32px/1 var(--font-primary)}.cerimonia-video-card p{margin:10px 0 0;color:rgba(16,41,26,.7);font:14px/1.65 var(--font-secondary)}
-@media(max-width:920px){.cerimonia-hero{min-height:570px;align-items:flex-start;flex-direction:column;padding:112px 20px 72px}.cerimonia-hero__mark{align-self:flex-end;width:140px;height:140px}.cerimonia-hero__mark strong{font-size:34px}.cerimonia-hero__text{font-size:16px}.cerimonia-videos{padding:72px 20px 88px}.cerimonia-section-heading{display:block;margin-bottom:34px}.cerimonia-section-heading>p{margin-top:20px;text-align:left}.cerimonia-video-grid{grid-template-columns:1fr;gap:42px}}
+.ceremony-video-element :deep(.layout-element__content), .ceremony-video-element :deep(.layout-element__children) { width: 100%; height: 100%; }
+.ceremony-video { display: block; width: 100%; height: 100%; min-height: 270px; object-fit: cover; background: #001f0c; }
 </style>
