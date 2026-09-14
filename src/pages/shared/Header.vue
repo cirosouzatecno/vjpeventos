@@ -1,10 +1,9 @@
 <template>
   <BlockNavigation
-    :logoSrc="logoImage"
     logoText=""
     logoAlt="VJ Projetos Especiais Produções"
     logoHref="/"
-    :isLogoVisible="true"
+    :isLogoVisible="false"
     layout="desktop-3"
     mobileLayout="mobile-1"
     mobileLinksAlignment="right"
