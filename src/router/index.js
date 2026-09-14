@@ -7,6 +7,7 @@ const routes = [
   { path: '/batizado', component: () => import('@/pages/BatizadoPage.vue') },
   { path: '/15-anos', component: () => import('@/pages/Page15AnosPage.vue') },
   { path: '/casamento', component: () => import('@/pages/CasamentoPage.vue') },
+  { path: '/cerimonia', component: () => import('@/pages/CerimoniaPage.vue') },
   { path: '/aniversario', component: () => import('@/pages/AniversarioPage.vue') },
   { path: '/decoracao-residencial', component: () => import('@/pages/DecoracaoResidencialPage.vue') },
   { path: '/sobre-nos', component: () => import('@/pages/SobreNosPage.vue') },
