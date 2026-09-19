@@ -45,6 +45,7 @@ const navLinks = [
   { id: 'home', href: '/', text: 'Home', isHidden: false, hasDropdown: false },
   { id: 'zZ-6qQ', href: '/projetos', text: 'Projetos', isHidden: false, hasDropdown: false },
   { id: 'zVo9Oq', href: '/corporativo', text: 'Corporativo', isHidden: false, hasDropdown: false },
+  { id: 'festas', href: '/festas', text: 'Festas', isHidden: false, hasDropdown: false },
   { id: 'zFoU1B', href: '/batizado', text: 'Batizado', isHidden: false, hasDropdown: false },
   { id: 'zXRmaY', href: '/15-anos', text: '15 Anos', isHidden: false, hasDropdown: false },
   { id: 'zUx4YB', href: '/casamento', text: 'Casamento', isHidden: false, hasDropdown: false },
