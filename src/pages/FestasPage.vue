@@ -103,6 +103,18 @@
             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.08%20%282%29-ZjJiNxanQ0XSN5ZpiDskUCEXkIhcBE.jpeg" alt="Lounge em tons quentes com flores e sofás" loading="lazy" />
             <figcaption>Atmosferas marcantes</figcaption>
           </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2016.51.14%20%284%29-bUi0ZmSJkX30zfTkXVeCiUhaXmaoeE.jpeg" alt="Planta baixa de um espaço de eventos com área kids e deck" loading="lazy" />
+            <figcaption>Planejamento de espaços</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2016.51.14-x0d9dUD5JNuzOKMX3CP77tYd8deshV.jpeg" alt="Salão de eventos com mesas floridas e iluminação cênica" loading="lazy" />
+            <figcaption>Ambientações completas</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2016.51.15-lnrk8zcJYp3FcDvVDfhTzPIlpiHKlH.jpeg" alt="Festa com mesas cor-de-rosa, flores e cadeiras de madeira" loading="lazy" />
+            <figcaption>Festas autorais</figcaption>
+          </figure>
         </div>
       </section>
     </main>
