@@ -115,6 +115,64 @@
             <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2016.51.15-lnrk8zcJYp3FcDvVDfhTzPIlpiHKlH.jpeg" alt="Festa com mesas cor-de-rosa, flores e cadeiras de madeira" loading="lazy" />
             <figcaption>Festas autorais</figcaption>
           </figure>
+          <figure class="gallery-card gallery-card--wide">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.26%20%283%29-c4hxNkeAMt6f8Lah3ElU9bLyxfuAjO.jpeg" alt="Cerimônia com passarela branca, cortinas e convidados" loading="lazy" />
+            <figcaption>Cerimônias inesquecíveis</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.27%20%282%29-bR3TOLD1hjaeTqjfWlnXWIEpQC0Ixe.jpeg" alt="Salão de festa com lustres, mesas e decoração em vermelho" loading="lazy" />
+            <figcaption>Salões celebrados</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.27%20%284%29-2IUYYnzMpGinSlUpzWb2Ou8dc7Kqzi.jpeg" alt="Bolo de vários andares em mesa decorada com doces" loading="lazy" />
+            <figcaption>Mesas de doces</figcaption>
+          </figure>
+          <figure class="gallery-card gallery-card--wide">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.22-wKwWSeI9DWrMHQkmrF2oHBxheNWpAw.jpeg" alt="Mesa de doces com painéis listrados e arranjos florais" loading="lazy" />
+            <figcaption>Detalhes que encantam</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.24%20%281%29-SOOjWy6fYhYwGiNluBqh4ocOqSyDfD.jpeg" alt="Mesa de doces com decoração clássica e flores" loading="lazy" />
+            <figcaption>Confeitaria especial</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.24%20%282%29-tHNngmpTW445BgTKyDlCoy3eUkJcGt.jpeg" alt="Ambiente de festa com bolo branco, folhagens e flores claras" loading="lazy" />
+            <figcaption>Elegância natural</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.10-qYaP2ZqNTELT5bJPHLHbEy5Bahuaoi.jpeg" alt="Corredor de evento com arranjos florais sob iluminação azul" loading="lazy" />
+            <figcaption>Iluminação cênica</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.26-rIQhb42zb7nsIeRcWSTTVJVHXas3t0.jpeg" alt="Salão de jantar com mesas e flores sob luz azul e roxa" loading="lazy" />
+            <figcaption>Atmosferas noturnas</figcaption>
+          </figure>
+          <figure class="gallery-card gallery-card--wide">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.27%20%281%29-N1aHbrVrahZThwehL5lgYrQgvo8FYS.jpeg" alt="Mesa de doces com flores coloridas, velas e cristais" loading="lazy" />
+            <figcaption>Composições florais</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.28%20%281%29-2LME3IHh60bEN5XJLhb4kQlg7RYq93.jpeg" alt="Lounge com sofás brancos e arranjos florais amarelos" loading="lazy" />
+            <figcaption>Lounges personalizados</figcaption>
+          </figure>
+          <figure class="gallery-card">
+            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.23-GRlVeNcGmUbBT3TFDI0G4nKncDFysb.jpeg" alt="Mesa de doces com flores rosas e folhagens sob luz quente" loading="lazy" />
+            <figcaption>Festas com identidade</figcaption>
+          </figure>
+        </div>
+
+        <div class="festas-video festas-video--collection">
+          <div>
+            <p class="eyebrow">Mais produções</p>
+            <h2>Veja cada detalhe em movimento</h2>
+            <p>Uma seleção de registros para sentir a atmosfera, a montagem e a energia das nossas celebrações.</p>
+          </div>
+          <div class="festas-video__grid">
+            <video controls playsinline preload="metadata" aria-label="Vídeo de montagem de festa com flores e iluminação"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.46%20%281%29-kX39WIA7rHSUZ6FA5D15XVd0FnDw50.mp4" type="video/mp4" /></video>
+            <video controls playsinline preload="metadata" aria-label="Vídeo de ambientação de evento"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45%20%283%29-gsjLL9lEih8TQY9AOTUViydrEUf2cb.mp4" type="video/mp4" /></video>
+            <video controls playsinline preload="metadata" aria-label="Vídeo de decoração de festa"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45%20%282%29-QBtUbzLqG4huERGug44KlSTaTtuuUx.mp4" type="video/mp4" /></video>
+            <video controls playsinline preload="metadata" aria-label="Vídeo de evento decorado"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45-CgrnhoMX5TKS956w5bvs7b9ugf0rSR.mp4" type="video/mp4" /></video>
+          </div>
         </div>
       </section>
     </main>
@@ -179,6 +237,9 @@ useHead({
 .gallery-card figcaption { position: absolute; z-index: 1; left: 20px; bottom: 18px; color: var(--festas-cream); font-family: 'Cormorant Garamond', Georgia, serif; font-size: 24px; }
 .festas-video { display: grid; grid-template-columns: .8fr 1.4fr; gap: 48px; align-items: center; padding: 100px 0; }
 .festas-video video { width: 100%; max-height: 620px; object-fit: cover; background: #000; }
+.festas-video--collection { display: block; padding-top: 72px; }
+.festas-video__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 32px; }
+.festas-video__grid video { aspect-ratio: 9 / 14; max-height: none; object-fit: cover; }
 
 @media (max-width: 920px) {
   .festas-hero { min-height: 680px; }
@@ -187,6 +248,7 @@ useHead({
   .festas-gallery--featured .gallery-card--wide, .festas-gallery--mosaic .gallery-card--wide { grid-column: span 2; }
   .festas-gallery--details { grid-template-columns: 1fr 1fr; }
   .festas-video { grid-template-columns: 1fr; gap: 32px; padding: 72px 0; }
+  .festas-video__grid { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 560px) {
@@ -197,6 +259,7 @@ useHead({
   .festas-gallery--featured .gallery-card:first-child { min-height: 420px; }
   .festas-hero__intro { font-size: 14px; }
   .gallery-card figcaption { font-size: 22px; }
+  .festas-video__grid { grid-template-columns: 1fr; }
 }
 </style>
 
