@@ -161,6 +161,77 @@
           </figure>
         </div>
 
+        <section class="festas-showcase" aria-labelledby="novos-registros-title">
+          <div class="festas-heading">
+            <p class="eyebrow">Novos registros</p>
+            <h2 id="novos-registros-title">Celebrações com a assinatura VJ</h2>
+            <p>Uma seleção de festas, recepções e experiências corporativas produzidas para diferentes estilos de celebração.</p>
+          </div>
+
+          <div class="festas-gallery festas-gallery--details festas-gallery--new">
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.27%20%284%29-NaoAhdfM8BytpAAsx6iFttmYX7WWez.jpeg" alt="Mesa de doces em tons de rosa e roxo com bolo de vários andares" loading="lazy" />
+              <figcaption>Mesas de doces memoráveis</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.22-rWxlrmHDFmXORUfjrwCiDA4ivwZjN7.jpeg" alt="Recepção com mesas postas, cadeiras transparentes e decoração vermelha" loading="lazy" />
+              <figcaption>Recepções sofisticadas</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.24%20%281%29-veJapnfNuJfcUpTNBCd64wG5GsaOk0.jpeg" alt="Mesa de doces com painel listrado vermelho e arranjos florais" loading="lazy" />
+              <figcaption>Detalhes que encantam</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--tall">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.24%20%282%29-HMb1ApJIlPXgTt2fQJmwKILOu3AmL7.jpeg" alt="Bolo branco em ambiente elegante com flores e folhagens" loading="lazy" />
+              <figcaption>Elegância natural</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--tall">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.25%20%284%29-2O7P8cGdFWU8QaMpoeF6hd7OTPM9Ea.jpeg" alt="Recepção ao ar livre com mesas azuis, poltronas brancas e flores amarelas" loading="lazy" />
+              <figcaption>Recepções ao ar livre</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--tall">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.27%20%283%29-Npiz3FyuOqgZHQ9Y6ewFnF6e5aakHa.jpeg" alt="Espaço de evento iluminado com áreas de negócios e artesanato" loading="lazy" />
+              <figcaption>Experiências corporativas</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.47.43%20%281%29-buMNzHpwryvTrHDhKEsOy2YAr1xXIs.jpeg" alt="Entrada iluminada de evento com identidade visual Expo Rio Preto" loading="lazy" />
+              <figcaption>Entradas que recebem</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.47.43%20%282%29-qlrmxUXxb1jnEBpqkrAir42x3lA3IA.jpeg" alt="Estande noturno com mesas e ambientação do projeto Raízes" loading="lazy" />
+              <figcaption>Projetos com identidade</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.47.43%20%283%29-cOdrqwuhAIqZMtYuGAps7eSItPWGPe.jpeg" alt="Passarela de madeira com iluminação quente e convidados" loading="lazy" />
+              <figcaption>Atmosferas acolhedoras</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.47.44%20%282%29-74vEqzKkA56BSADed8saoP6NDrlYi4.jpeg" alt="Lounge com mesas, sofás e iluminação azul e laranja" loading="lazy" />
+              <figcaption>Lounges personalizados</figcaption>
+            </figure>
+            <figure class="gallery-card">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.27-fhgUorw9xqaDSHoXcBodYZaCyGov3p.jpeg" alt="Mesa decorada com bicicletas, flores amarelas e tapete azul" loading="lazy" />
+              <figcaption>Composições criativas</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.28-EboSm6NYhHjiyKrTJqC4eJGPZppW2v.jpeg" alt="Auditório com cadeiras transparentes, palco e iluminação cênica" loading="lazy" />
+              <figcaption>Eventos corporativos</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.47.43-tNrrGuq5njlYer5KmkjDIthzoSf5Dv.jpeg" alt="Recepção noturna com mesas e iluminação azul" loading="lazy" />
+              <figcaption>Eventos que conectam</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.26%20%282%29-lJZkj50ULrJUTQu6mkcdBHyxhq7b6N.jpeg" alt="Espaço de convivência com mesas de madeira, flores e iluminação quente" loading="lazy" />
+              <figcaption>Espaços de convivência</figcaption>
+            </figure>
+            <figure class="gallery-card gallery-card--wide">
+              <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Image%202026-09-15%20at%2010.54.23%20%281%29-caTY2tCptvQw3PnHmCuSeHK7ezf0En.jpeg" alt="Mesa externa com bicicletas decorativas, flores amarelas e toldos verdes" loading="lazy" />
+              <figcaption>Detalhes autorais</figcaption>
+            </figure>
+          </div>
+        </section>
+
         <div class="festas-video festas-video--collection">
           <div>
             <p class="eyebrow">Mais produções</p>
@@ -168,6 +239,9 @@
             <p>Uma seleção de registros para sentir a atmosfera, a montagem e a energia das nossas celebrações.</p>
           </div>
           <div class="festas-video__grid">
+            <video controls playsinline preload="metadata" aria-label="Vídeo de mesa de doces com bolo e decoração"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.46%20%281%29-7fAt7IyQAGBBedHK032B4NURbxDqXs.mp4" type="video/mp4" /></video>
+            <video controls playsinline preload="metadata" aria-label="Vídeo de ambientação de festa"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45%20%283%29-GcYzue4sWvhBpQRqm7zNJppYCYprhh.mp4" type="video/mp4" /></video>
+            <video controls playsinline preload="metadata" aria-label="Vídeo de decoração de evento"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45%20%282%29-Xbg1YY4EsnAb0rfkc0cXyNitAFVlL9.mp4" type="video/mp4" /></video>
             <video controls playsinline preload="metadata" aria-label="Vídeo de montagem de festa com flores e iluminação"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.46%20%281%29-kX39WIA7rHSUZ6FA5D15XVd0FnDw50.mp4" type="video/mp4" /></video>
             <video controls playsinline preload="metadata" aria-label="Vídeo de ambientação de evento"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45%20%283%29-gsjLL9lEih8TQY9AOTUViydrEUf2cb.mp4" type="video/mp4" /></video>
             <video controls playsinline preload="metadata" aria-label="Vídeo de decoração de festa"><source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/WhatsApp%20Video%202026-09-15%20at%2011.08.45%20%282%29-QBtUbzLqG4huERGug44KlSTaTtuuUx.mp4" type="video/mp4" /></video>
