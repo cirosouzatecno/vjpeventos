@@ -26,8 +26,19 @@
         blockId="z9vOib" htmlId="z9vOib" blockClassName="block" innerClassName="block-layout block-layout--layout"
         :blockStyle="s2Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
       >
+        <LayoutElement elementId="dco9jz" className="layout-element layout-element--layout"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 1, '--grid-row': '1/2', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2', 'aspect-ratio': '16 / 9', 'width': '100%' }"
+          :hasRotationFrame="false" :hasEntranceAnimation="false">
+          <GridVideo id="dco9jz"
+            src="https://www.youtube.com/embed/dco9jz2aL7o?autoplay=1&controls=1&loop=1&playlist=dco9jz2aL7o&playsinline=1&mute=1"
+            provider="youtube"
+            jpg="https://i.ytimg.com/vi/dco9jz2aL7o/hqdefault.jpg"
+            webp="https://i.ytimg.com/vi_webp/dco9jz2aL7o/hqdefault.webp"
+            style="aspect-ratio: 16 / 9; width: 100%; height: 100%;"
+          />
+        </LayoutElement>
         <LayoutElement elementId="zrLOTN" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 1, '--grid-row': '2/3', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2', 'aspect-ratio': '16 / 9', 'width': '100%' }"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 2, '--grid-row': '4/5', '--grid-column': '2/5', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="zrLOTN"
             src="https://www.youtube.com/embed/rLOTNCj1x1g?h=null&playlist=rLOTNCj1x1g&autoplay=1&controls=0&loop=1&autopause=0&playsinline=1&mute=1"
@@ -38,7 +49,7 @@
           />
         </LayoutElement>
         <LayoutElement elementId="zPDJEu" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 2, '--grid-row': '4/5', '--grid-column': '2/5', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 3, '--grid-row': '6/7', '--grid-column': '2/5', '--m-grid-row': '5/6', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="zPDJEu"
             src="https://www.youtube.com/embed/m7OETuDX684?h=null&playlist=m7OETuDX684&autoplay=1&controls=0&loop=1&autopause=0&playsinline=1&mute=1"
@@ -48,7 +59,7 @@
           />
         </LayoutElement>
         <LayoutElement elementId="z2a8vn" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 3, '--grid-row': '6/7', '--grid-column': '3/4', '--m-grid-row': '5/6', '--m-grid-column': '1/2' }"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 4, '--grid-row': '8/9', '--grid-column': '3/4', '--m-grid-row': '7/8', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="z2a8vn"
             src="https://www.youtube.com/embed/jol6xQvyitk?h=null&playlist=jol6xQvyitk&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0"
@@ -169,10 +180,10 @@ const s1Background = {
 
 const s2Style = {
   '--block-padding': '16px 0 16px 0', '--m-block-padding': '16px',
-  '--m-grid-template-rows': '56.25vw 20px 135.83vw 20px 135.83vw 30px',
-  '--t-grid-template-rows': 'minmax(274px, auto) minmax(20px, auto) minmax(489px, auto) minmax(20px, auto) minmax(489px, auto) 1fr',
-  '--small-desktop-grid-template-rows': 'minmax(1.39vw, auto) minmax(22.34vw, auto) minmax(2vw, auto) minmax(62.66vw, auto) minmax(4.58vw, auto) minmax(22.06vw, auto) 1fr',
-  '--grid-template-rows': 'minmax(17px, auto) minmax(274px, auto) minmax(28px, auto) minmax(767px, auto) minmax(56px, auto) minmax(270px, auto) 1fr',
+  '--m-grid-template-rows': '56.25vw 20px 56.25vw 20px 135.83vw 20px 135.83vw 30px',
+  '--t-grid-template-rows': 'minmax(274px, auto) minmax(20px, auto) minmax(274px, auto) minmax(20px, auto) minmax(489px, auto) minmax(20px, auto) minmax(489px, auto) 1fr',
+  '--small-desktop-grid-template-rows': 'minmax(22.34vw, auto) minmax(2vw, auto) minmax(22.34vw, auto) minmax(2vw, auto) minmax(62.66vw, auto) minmax(4.58vw, auto) minmax(22.06vw, auto) 1fr',
+  '--grid-template-rows': 'minmax(274px, auto) minmax(28px, auto) minmax(274px, auto) minmax(28px, auto) minmax(767px, auto) minmax(56px, auto) minmax(270px, auto) 1fr',
   '--m-grid-template-columns': '100.00%',
   '--grid-template-columns': '27.53% 0.25% 39.22% 0.25% 32.76%',
   '--m-block-min-height': 'auto',
