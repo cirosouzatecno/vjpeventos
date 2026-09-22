@@ -24,6 +24,7 @@ async function createReadToken() {
     operations: ['get'],
     validUntil: Date.now() + 60 * 60 * 1000,
     storeId: process.env.BLOB_STORE_ID,
+    oidcToken: process.env.VERCEL_OIDC_TOKEN,
   })
 }
 
