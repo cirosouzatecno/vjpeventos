@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite --port 3000 --host 0.0.0.0",
-    "build": "vite build",
+    "build": "node scripts/prepare-home-video.mjs && vite build",
     "preview": "vite preview",
     "db:setup": "node --env-file=.env.local scripts/setup-db.mjs",
     "admin:create": "node --env-file=.env.local scripts/create-admin.mjs"

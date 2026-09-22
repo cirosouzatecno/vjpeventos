@@ -31,14 +31,18 @@
         :blockStyle="s2Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
       >
         <LayoutElement elementId="dco9jz" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 1, '--grid-row': '1/2', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2', 'aspect-ratio': '16 / 9', 'width': '100%' }"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 1, '--grid-row': '1/2', '--grid-column': '1/6', '--m-grid-row': '1/2', '--m-grid-column': '1/2', 'aspect-ratio': '560 / 752', 'width': '100%', 'max-width': '560px', 'justify-self': 'center' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="dco9jz"
-            src="https://www.youtube.com/embed/dco9jz2aL7o?autoplay=0&controls=1&playsinline=1"
-            provider="youtube"
-            jpg="https://i.ytimg.com/vi/dco9jz2aL7o/hqdefault.jpg"
-            webp="https://i.ytimg.com/vi_webp/dco9jz2aL7o/hqdefault.webp"
-            style="aspect-ratio: 16 / 9; width: 100%; height: 100%;"
+            src="/videos/home-vj.mp4"
+            provider="local"
+            :autoplay="true"
+            :muted="true"
+            :loop="true"
+            :controls="false"
+            fit="contain"
+            :frameless="true"
+            style="aspect-ratio: 560 / 752; width: 100%; height: 100%;"
           />
         </LayoutElement>
         <LayoutElement elementId="zrLOTN" className="layout-element layout-element--layout"
@@ -183,7 +187,7 @@ const s1Background = {
 
 const s2Style = {
   '--block-padding': '16px 0 16px 0', '--m-block-padding': '16px',
-  '--m-grid-template-rows': '56.25vw 20px 56.25vw 20px 135.83vw 20px 135.83vw 30px',
+  '--m-grid-template-rows': '134.29vw 20px 56.25vw 20px 135.83vw 20px 135.83vw 30px',
   '--t-grid-template-rows': 'minmax(274px, auto) minmax(20px, auto) minmax(274px, auto) minmax(20px, auto) minmax(489px, auto) minmax(20px, auto) minmax(489px, auto) 1fr',
   '--small-desktop-grid-template-rows': 'minmax(22.34vw, auto) minmax(2vw, auto) minmax(22.34vw, auto) minmax(2vw, auto) minmax(62.66vw, auto) minmax(4.58vw, auto) minmax(22.06vw, auto) 1fr',
   '--grid-template-rows': 'minmax(274px, auto) minmax(28px, auto) minmax(274px, auto) minmax(28px, auto) minmax(767px, auto) minmax(56px, auto) minmax(270px, auto) 1fr',
