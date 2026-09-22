@@ -57,6 +57,7 @@ export default async function handler(req, res) {
       validUntil,
       allowedContentTypes: [contentType],
       maximumSizeInBytes: MAX_SIZE,
+      addRandomSuffix: false,
     })
 
     return json(res, 200, {
