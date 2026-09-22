@@ -20,16 +20,6 @@
         </LayoutElement>
       </BlockLayout>
 
-      <BlockLayout blockId="zxR4He" htmlId="zxR4He" blockClassName="block"
-        innerClassName="block-layout block-layout--layout"
-        :blockStyle="s3Style" :background="darkBg" :isFixed="true">
-        <LayoutElement elementId="zGn28l" className="layout-element layout-element--layout"
-          :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':1,'--grid-row':'2/3','--grid-column':'2/3','--m-grid-row':'2/3','--m-grid-column':'1/2'}"
-          :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zGn28l" src="https://www.youtube.com/embed/aLMI6EK5VWo?h=null&playlist=aLMI6EK5VWo&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/aLMI6EK5VWo/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/aLMI6EK5VWo/hqdefault.webp" />
-        </LayoutElement>
-      </BlockLayout>
-
       <Footer />
     </div>
   </Page>
@@ -43,7 +33,6 @@ import Footer from '@/pages/shared/Footer.vue'
 import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
 import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
-import GridVideo from '@/components/builder/elements/GridVideo.vue'
 import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
 
 useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Festas | VJ Eventos' })
@@ -62,14 +51,4 @@ const s2Style = {
   '--small-desktop-block-min-height': 'auto', '--block-min-height': '129px',
 }
 
-const s3Style = {
-  '--block-padding': '16px 0 16px 0', '--m-block-padding': '16px',
-  '--m-grid-template-rows': '8.06vw 155.83vw 81px',
-  '--t-grid-template-rows': 'minmax(29px, auto) minmax(561px, auto) 1fr',
-  '--small-desktop-grid-template-rows': 'minmax(4.08vw, auto) minmax(38.15vw, auto) 48.69vw',
-  '--grid-template-rows': 'minmax(50px, auto) minmax(467px, auto) 1fr',
-  '--m-grid-template-columns': '100.00%', '--grid-template-columns': '15.28% 67.89% 16.83%',
-  '--m-block-min-height': 'auto', '--t-block-min-height': '671px',
-  '--small-desktop-block-min-height': 'auto', '--block-min-height': '1113px',
-}
 </script>
