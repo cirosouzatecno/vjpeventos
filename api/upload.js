@@ -1,11 +1,13 @@
 import { handleUpload } from '@vercel/blob/client'
 import { currentAdmin } from './_lib/auth.js'
 import { json, methodNotAllowed } from './_lib/http.js'
+import { ensureDatabase } from './_lib/setup.js'
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') return methodNotAllowed(res, ['POST'])
 
   try {
+    await ensureDatabase()
     const result = await handleUpload({
       body: req.body,
       request: req,
