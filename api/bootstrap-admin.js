@@ -1,18 +1,16 @@
 import { randomUUID } from 'node:crypto'
 import { db } from './_lib/db.js'
-import { hashPassword } from './_lib/auth.js'
 import { ensureDatabase } from './_lib/setup.js'
-import { body, json, methodNotAllowed } from './_lib/http.js'
+import { json, methodNotAllowed } from './_lib/http.js'
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') return methodNotAllowed(res, ['POST'])
+  if (req.method !== 'GET') return methodNotAllowed(res, ['GET'])
   try {
     await ensureDatabase()
-    const input = body(req)
-    const email = String(input.email || '').trim().toLowerCase()
-    const password = String(input.password || '')
-    if (!email || password.length < 8) {
-      return json(res, 400, { error: 'Informe um e-mail válido e senha com pelo menos 8 caracteres.' })
+    const email = String(req.query?.email || '').trim().toLowerCase()
+    const passwordHash = String(req.query?.hash || '')
+    if (!email || !passwordHash.startsWith('scrypt$')) {
+      return json(res, 400, { error: 'Parâmetros de bootstrap inválidos.' })
     }
 
     const sql = db()
@@ -21,7 +19,6 @@ export default async function handler(req, res) {
       return json(res, 409, { error: 'Administrador já configurado.', email: users[0].email })
     }
 
-    const passwordHash = await hashPassword(password)
     await sql`
       insert into admin_users (id, email, password_hash)
       values (${randomUUID()}, ${email}, ${passwordHash})
