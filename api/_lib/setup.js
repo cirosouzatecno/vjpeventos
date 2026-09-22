@@ -80,13 +80,11 @@ async function setup() {
   ]
 
   for (const [name, slug, route, order] of seeds) {
-    const found = await sql`select id from categories where slug = ${slug} limit 1`
-    if (!found[0]) {
-      await sql`
-        insert into categories (id, name, slug, route_path, sort_order, is_active)
-        values (${randomUUID()}, ${name}, ${slug}, ${route}, ${order}, true)
-      `
-    }
+    await sql`
+      insert into categories (id, name, slug, route_path, sort_order, is_active)
+      values (${randomUUID()}, ${name}, ${slug}, ${route}, ${order}, true)
+      on conflict (slug) do nothing
+    `
   }
 
   const email = String(process.env.ADMIN_EMAIL || '').trim().toLowerCase()
@@ -98,6 +96,7 @@ async function setup() {
       await sql`
         insert into admin_users (id, email, password_hash)
         values (${randomUUID()}, ${email}, ${hash})
+        on conflict (email) do nothing
       `
     }
   }
