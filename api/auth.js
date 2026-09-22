@@ -2,9 +2,11 @@ import { randomUUID } from 'node:crypto'
 import { db } from './_lib/db.js'
 import { body, json, methodNotAllowed } from './_lib/http.js'
 import { createSession, currentAdmin, destroySession, verifyPassword } from './_lib/auth.js'
+import { ensureDatabase } from './_lib/setup.js'
 
 export default async function handler(req, res) {
   try {
+    await ensureDatabase()
     if (req.method === 'GET') {
       const user = await currentAdmin(req)
       return json(res, 200, { authenticated: Boolean(user), user })
