@@ -33,6 +33,7 @@ async function signedUrl(token, value) {
   const { presignedUrl } = await presignUrl(token, {
     pathname: pathnameFromUrl(value),
     operation: 'get',
+    access: 'private',
     validUntil: Date.now() + 60 * 60 * 1000,
   })
   return presignedUrl
