@@ -163,7 +163,7 @@ async function setup() {
           'Mídia já existente no site antes da ativação do CMS.', null, ${mediaType},
           ${imageUrl}, ${youtubeId}, false, false, ${sortOrder}, ${sourceKey}
         )
-        on conflict (source_key) do nothing
+        on conflict do nothing
       `
     }
 
