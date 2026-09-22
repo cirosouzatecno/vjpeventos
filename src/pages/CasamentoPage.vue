@@ -51,9 +51,9 @@ import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
 import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
 
-useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Le Jardin Eventos' })
+useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Casamentos em São José do Rio Preto | V J Produções e Eventos' })
 
-const s2Title = '<h3 dir="auto" style="color: rgb(255, 255, 255); --lineHeightMobile: 1.3; --fontSizeMobile: 24px;">Casamentos</h3>'
+const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração de Casamentos em São José do Rio Preto - SP</h1>'
 const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }
 
 const s2Style = {

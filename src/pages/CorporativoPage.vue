@@ -73,11 +73,11 @@ import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
 
 useHead({
   htmlAttrs: { lang: 'pt-BR' },
-  title: 'Decoração de Eventos e Peças Corporativas',
+  title: 'Eventos Corporativos em São José do Rio Preto | V J Produções e Eventos',
   meta: [{ name: 'description', content: 'Descubra as melhores opções de decoração de eventos e peças corporativas. Transforme suas festas e eventos com nossas soluções criativas e personalizadas para cada ocasião.' }],
 })
 
-const s2Title = '<h3 dir="auto" style="color: rgb(255, 255, 255); --lineHeightMobile: 1.3; --fontSizeMobile: 24px;">Festas Corporativas</h3>'
+const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração de Eventos Corporativos em São José do Rio Preto - SP</h1>'
 const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }
 
 const s2Style = {

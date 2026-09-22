@@ -21,6 +21,10 @@
         </LayoutElement>
       </BlockLayout>
 
+      <section class="home-seo-heading" aria-labelledby="home-main-title">
+        <h1 id="home-main-title">Decoração de Eventos em São José do Rio Preto - SP</h1>
+      </section>
+
       <!-- Section 2: Videos -->
       <BlockLayout
         blockId="z9vOib" htmlId="z9vOib" blockClassName="block" innerClassName="block-layout block-layout--layout"
@@ -93,7 +97,7 @@ import GridVideo from '@/components/builder/elements/GridVideo.vue'
 
 useHead({
   htmlAttrs: { lang: 'pt-BR' },
-  title: 'Decoração de Eventos e Projetos de Festas',
+  title: 'Decoração de Eventos em São José do Rio Preto | V J Produções e Eventos',
   meta: [
     { name: 'description', content: 'Explore nosso site dedicado a projetos de decoração de festas, incluindo eventos corporativos e festas de 15 anos. Transforme suas celebrações com nossas ideias criativas e soluções personalizadas em decoração de festas, decoração de eventos.' },
   ],
@@ -203,3 +207,19 @@ const s3Style = {
   '--small-desktop-block-min-height': '45.751633986928105vw', '--block-min-height': '560px',
 }
 </script>
+
+
+<style scoped>
+.home-seo-heading {
+  padding: 36px 24px 28px;
+  background: rgb(0, 29, 13);
+  color: rgb(242, 237, 229);
+  text-align: center;
+}
+.home-seo-heading h1 {
+  max-width: 1100px;
+  margin: 0 auto;
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  line-height: 1.08;
+}
+</style>

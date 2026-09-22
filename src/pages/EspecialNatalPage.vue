@@ -12,7 +12,7 @@
       <main class="natal-page">
         <section id="galeria-natal" class="natal-gallery" aria-labelledby="galeria-title">
           <div class="natal-gallery__intro">
-            <div><p class="natal-kicker natal-kicker--dark">Inspirações</p><h2 id="galeria-title">Detalhes que aquecem a celebração</h2></div>
+            <div><p class="natal-kicker natal-kicker--dark">Inspirações</p><h1 id="galeria-title">Decoração de Natal em São José do Rio Preto - SP</h1></div>
             <p class="natal-gallery__hint">Clique em qualquer imagem para visualizar em tamanho maior.</p>
           </div>
           <div class="natal-gallery__grid">
@@ -51,7 +51,7 @@ import image8 from '@/assets/natal/8.jpg'
 import image9 from '@/assets/natal/9.jpg'
 import image11 from '@/assets/natal/11.jpg'
 
-useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Especial Natal | Le Jardin Eventos', meta: [{ name: 'description', content: 'Galeria de inspirações natalinas da Le Jardin Eventos.' }] })
+useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Decoração de Natal em São José do Rio Preto | V J Produções e Eventos', meta: [{ name: 'description', content: 'Galeria de inspirações natalinas da V J Produções e Eventos em São José do Rio Preto - SP.' }] })
 
 const galleryImages = [
   { id: 11, src: image11, alt: 'Árvore de Natal com laços vermelhos e luzes douradas', caption: 'Natal clássico em vermelho e dourado', featured: true },
@@ -82,7 +82,7 @@ onBeforeUnmount(() => { document.body.style.overflow = '' })
 .natal-hero__content{position:relative;z-index:1;max-width:680px}
 .natal-kicker{margin:0;color:rgb(242,237,229);font:500 13px/1.5 var(--font-secondary);letter-spacing:.18em;text-transform:uppercase}
 .natal-kicker--dark{color:rgb(242,237,229)}
-.natal-hero h1,.natal-gallery h2{margin:18px 0 0;font-family:var(--font-primary);font-weight:400;letter-spacing:.01em;line-height:.95}
+.natal-hero h1,.natal-gallery h1{margin:18px 0 0;font-family:var(--font-primary);font-weight:400;letter-spacing:.01em;line-height:.95}
 .natal-hero h1{color:rgb(242,237,229);font-size:clamp(4.5rem,10vw,9rem);font-style:italic}
 .natal-hero__text{max-width:540px;margin:30px 0 0;color:rgba(242,237,229,.78);font:300 18px/1.7 var(--font-secondary)}
 .natal-hero__link{display:inline-flex;gap:14px;margin-top:34px;padding-bottom:8px;border-bottom:1px solid rgb(196,164,74);color:rgb(242,237,229);font:500 13px var(--font-secondary);letter-spacing:.08em;text-decoration:none;text-transform:uppercase;transition:gap 180ms ease,color 180ms ease}
@@ -92,7 +92,7 @@ onBeforeUnmount(() => { document.body.style.overflow = '' })
 .natal-hero__seal strong{margin:4px 0;font:italic 400 48px var(--font-primary)}
 .natal-gallery{padding:100px max(6vw,32px) 120px;background:rgb(1,36,14);color:rgb(242,237,229)}
 .natal-gallery__intro{display:flex;align-items:end;justify-content:space-between;gap:36px;max-width:1224px;margin:0 auto 52px}
-.natal-gallery h2{max-width:600px;color:rgb(242,237,229);font-size:clamp(2.8rem,5vw,5rem)}
+.natal-gallery h1{max-width:600px;color:rgb(242,237,229);font-size:clamp(2.8rem,5vw,5rem)}
 .natal-gallery__hint{max-width:250px;margin:0 0 6px;color:rgba(242,237,229,.78);font:14px/1.7 var(--font-secondary);text-align:right}
 .natal-gallery__grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;max-width:1224px;margin:0 auto}
 .natal-card{display:block;min-width:0;padding:0;color:rgb(242,237,229);text-align:left;cursor:zoom-in}
