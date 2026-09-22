@@ -2,12 +2,14 @@ import { randomUUID } from 'node:crypto'
 import { db } from './_lib/db.js'
 import { requireAdmin } from './_lib/auth.js'
 import { body, json, methodNotAllowed } from './_lib/http.js'
+import { ensureDatabase } from './_lib/setup.js'
 
 function slugify(value) {
   return String(value || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().trim().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
 }
 
 export default async function handler(req, res) {
+  await ensureDatabase()
   const admin = await requireAdmin(req, res)
   if (!admin) return
 
