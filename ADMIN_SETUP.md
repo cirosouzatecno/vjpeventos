@@ -35,6 +35,8 @@ BLOB_READ_WRITE_TOKEN
 
 O token fica somente no servidor. Ele não é exposto como variável `VITE_*`.
 
+Depois de conectar os recursos, faça um novo deploy para que as novas variáveis sejam incorporadas às Vercel Functions.
+
 ## 3. Inicialização automática
 
 Não é obrigatório executar SQL manualmente.
