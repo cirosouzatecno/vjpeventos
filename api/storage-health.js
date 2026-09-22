@@ -6,6 +6,7 @@ export default async function handler(req, res) {
   if (req.method !== 'GET') return methodNotAllowed(res, ['GET'])
   const pathname = `health/${randomUUID()}.txt`
   let blob = null
+  let presignedUrl = ''
   let step = 'put'
   try {
     blob = await put(pathname, 'ok', { access: 'private' })
@@ -15,14 +16,14 @@ export default async function handler(req, res) {
       operations: ['get'],
       validUntil: Date.now() + 5 * 60 * 1000,
       storeId: process.env.BLOB_STORE_ID,
-      oidcToken: process.env.VERCEL_OIDC_TOKEN,
     })
     step = 'presign'
-    const { presignedUrl } = await presignUrl(token, {
+    const signed = await presignUrl(token, {
       pathname,
       operation: 'get',
       validUntil: Date.now() + 60 * 1000,
     })
+    presignedUrl = signed.presignedUrl
     step = 'read'
     const read = await fetch(presignedUrl)
     const body = await read.text()
@@ -33,7 +34,7 @@ export default async function handler(req, res) {
       blobWriteOk: true,
       blobSignedReadOk: read.ok && body === 'ok',
       blobStoreIdPresent: Boolean(process.env.BLOB_STORE_ID),
-      oidcTokenPresent: Boolean(process.env.VERCEL_OIDC_TOKEN),
+      signedHost: new URL(presignedUrl).hostname,
     })
   } catch (error) {
     if (blob?.url) {
@@ -42,8 +43,10 @@ export default async function handler(req, res) {
     return json(res, 500, {
       databaseConfigured: Boolean(process.env.DATABASE_URL),
       blobStoreIdPresent: Boolean(process.env.BLOB_STORE_ID),
-      oidcTokenPresent: Boolean(process.env.VERCEL_OIDC_TOKEN),
       failedStep: step,
+      signedHost: presignedUrl ? new URL(presignedUrl).hostname : null,
+      causeCode: error?.cause?.code || null,
+      causeMessage: error?.cause?.message || null,
       error: error.message || 'Falha no teste do Blob.',
     })
   }
