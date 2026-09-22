@@ -1,5 +1,5 @@
 <template>
-  <div class="festas-page festas-page--two">
+    <div class="festas-page">
     <Header />
 
     <main>
