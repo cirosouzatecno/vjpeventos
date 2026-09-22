@@ -1,9 +1,11 @@
 import { db } from './_lib/db.js'
 import { json, methodNotAllowed } from './_lib/http.js'
+import { ensureDatabase } from './_lib/setup.js'
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') return methodNotAllowed(res, ['GET'])
   try {
+    await ensureDatabase()
     const sql = db()
     const featured = String(req.query?.featured || '') === '1'
     const category = String(req.query?.category || '')
