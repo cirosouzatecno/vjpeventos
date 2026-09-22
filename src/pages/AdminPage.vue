@@ -227,7 +227,6 @@
 
 <script setup>
 import { computed, onMounted, reactive, ref } from 'vue'
-import { upload } from '@vercel/blob/client'
 
 const session = ref(null)
 const email = ref('')
@@ -493,13 +492,35 @@ async function uploadSelectedFile() {
   const category = categories.value.find((c) => c.id === mediaForm.category_id)
   const folder = category?.slug || 'sem-categoria'
   const pathname = `${folder}/${Date.now()}-${safeName(selectedFile.value.name)}`
-  const blob = await upload(pathname, selectedFile.value, {
-    access: 'private',
-    handleUploadUrl: '/api/upload',
-    onUploadProgress: ({ percentage }) => { uploadProgress.value = Math.round(percentage) },
+  const contentType = selectedFile.value.type || 'application/octet-stream'
+
+  const signed = await api('/api/upload-url', {
+    method: 'POST',
+    body: {
+      pathname,
+      contentType,
+      size: selectedFile.value.size,
+    },
   })
+
+  await new Promise((resolve, reject) => {
+    const xhr = new XMLHttpRequest()
+    xhr.open('PUT', signed.uploadUrl)
+    xhr.setRequestHeader('Content-Type', contentType)
+    xhr.upload.onprogress = (event) => {
+      if (event.lengthComputable) uploadProgress.value = Math.round((event.loaded / event.total) * 100)
+    }
+    xhr.onload = () => {
+      if (xhr.status >= 200 && xhr.status < 300) resolve()
+      else reject(new Error(`Falha no envio ao Vercel Blob (${xhr.status}).`))
+    }
+    xhr.onerror = () => reject(new Error('Falha de rede durante o envio ao Vercel Blob.'))
+    xhr.send(selectedFile.value)
+  })
+
+  uploadProgress.value = 100
   return {
-    url: blob.url,
+    url: signed.blobUrl,
     type: selectedFile.value.type?.startsWith('video/') ? 'video' : 'image',
   }
 }
