@@ -7,8 +7,8 @@
     "dev": "vite --port 3000 --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview",
-    "db:setup": "node scripts/setup-db.mjs",
-    "admin:create": "node scripts/create-admin.mjs"
+    "db:setup": "node --env-file=.env.local scripts/setup-db.mjs",
+    "admin:create": "node --env-file=.env.local scripts/create-admin.mjs"
   },
   "dependencies": {
     "@unhead/vue": "^1.11.0",
