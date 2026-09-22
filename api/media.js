@@ -35,6 +35,7 @@ export default async function handler(req, res) {
     if (req.method === 'PATCH') {
       const input = body(req)
       if (!input.id) return json(res, 400, { error: 'ID obrigatório.' })
+      const before = await sql`select image_url from media_items where id = ${input.id} limit 1`
       await sql`
         update media_items
         set category_id = ${input.category_id || null}, title = ${String(input.title || '').trim()},
@@ -45,6 +46,11 @@ export default async function handler(req, res) {
             updated_at = now()
         where id = ${input.id}
       `
+      const oldUrl = before[0]?.image_url
+      const newUrl = input.image_url || null
+      if (oldUrl && oldUrl !== newUrl && oldUrl.includes('.blob.vercel-storage.com')) {
+        try { await del(oldUrl) } catch {}
+      }
       return json(res, 200, { ok: true })
     }
 
