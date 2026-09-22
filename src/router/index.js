@@ -13,6 +13,7 @@ const routes = [
   { path: '/decoracao-residencial', component: () => import('@/pages/DecoracaoResidencialPage.vue') },
   { path: '/sobre-nos', component: () => import('@/pages/SobreNosPage.vue') },
   { path: '/especial-natal', component: () => import('@/pages/EspecialNatalPage.vue') },
+  { path: '/admin', component: () => import('@/pages/AdminPage.vue') },
 ]
 
 const router = createRouter({
