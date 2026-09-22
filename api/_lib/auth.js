@@ -41,7 +41,8 @@ export async function createSession(res, userId) {
   const sql = db()
   await sql`insert into admin_sessions (id, user_id, token_hash, expires_at)
             values (${randomUUID()}, ${userId}, ${hash}, ${expires.toISOString()})`
-  res.setHeader('Set-Cookie', `${COOKIE}=${encodeURIComponent(token)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${SESSION_SECONDS}`)
+  const secure = process.env.VERCEL || process.env.NODE_ENV === 'production' ? '; Secure' : ''
+  res.setHeader('Set-Cookie', `${COOKIE}=${encodeURIComponent(token)}; Path=/; HttpOnly${secure}; SameSite=Strict; Max-Age=${SESSION_SECONDS}`)
 }
 
 export async function destroySession(req, res) {
@@ -50,7 +51,8 @@ export async function destroySession(req, res) {
     const sql = db()
     await sql`delete from admin_sessions where token_hash = ${tokenHash(token)}`
   }
-  res.setHeader('Set-Cookie', `${COOKIE}=; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=0`)
+  const secure = process.env.VERCEL || process.env.NODE_ENV === 'production' ? '; Secure' : ''
+  res.setHeader('Set-Cookie', `${COOKIE}=; Path=/; HttpOnly${secure}; SameSite=Strict; Max-Age=0`)
 }
 
 export async function currentAdmin(req) {
