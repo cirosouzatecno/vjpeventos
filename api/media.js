@@ -3,8 +3,10 @@ import { del } from '@vercel/blob'
 import { db } from './_lib/db.js'
 import { requireAdmin } from './_lib/auth.js'
 import { body, json, methodNotAllowed } from './_lib/http.js'
+import { ensureDatabase } from './_lib/setup.js'
 
 export default async function handler(req, res) {
+  await ensureDatabase()
   const admin = await requireAdmin(req, res)
   if (!admin) return
 
