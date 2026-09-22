@@ -31,6 +31,7 @@ export default async function handler(req, res) {
       validUntil: putUntil,
       allowedContentTypes: ['text/plain'],
       maximumSizeInBytes: 1024,
+      addRandomSuffix: false,
     })
     step = 'put'
     const putResponse = await fetch(uploadUrl, {
