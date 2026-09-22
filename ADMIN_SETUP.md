@@ -35,17 +35,20 @@ BLOB_READ_WRITE_TOKEN
 
 O token fica somente no servidor. Ele não é exposto como variável `VITE_*`.
 
-## 3. Preparar o banco
+## 3. Inicialização automática
 
-Com o projeto ligado à Vercel, no diretório do repositório:
+Não é obrigatório executar SQL manualmente.
 
-```bash
-npm install
-vercel env pull .env.local --yes
-npm run db:setup
+Depois de conectar o Neon, adicione temporariamente nas variáveis do projeto:
+
+```
+ADMIN_EMAIL
+ADMIN_PASSWORD
 ```
 
-O comando cria:
+Use uma senha com pelo menos 10 caracteres. Faça um novo deploy.
+
+Na primeira chamada à API, o próprio sistema cria automaticamente:
 
 - `admin_users`
 - `admin_sessions`
@@ -53,22 +56,15 @@ O comando cria:
 - `media_items`
 - índices
 - categorias iniciais do site
-
-O SQL de referência também está em `db/schema.sql`.
-
-## 4. Criar o primeiro administrador
-
-Defina o e-mail e uma senha com pelo menos 10 caracteres apenas durante a execução:
-
-```bash
-ADMIN_EMAIL="email@exemplo.com" ADMIN_PASSWORD="SENHA_FORTE" npm run admin:create
-```
+- o primeiro administrador, caso ainda não exista nenhum
 
 A senha nunca é salva em texto aberto. O sistema grava um hash usando `scrypt`.
 
-Depois do comando, não é necessário manter `ADMIN_EMAIL` ou `ADMIN_PASSWORD` na Vercel.
+Depois de conseguir entrar no painel, `ADMIN_EMAIL` e `ADMIN_PASSWORD` podem ser removidos da Vercel e um novo deploy pode ser feito.
 
-## 5. Acesso ao painel
+Como alternativa para manutenção técnica, continuam disponíveis `npm run db:setup`, `npm run admin:create` e o SQL de referência em `db/schema.sql`.
+
+## 4. Acesso ao painel
 
 Depois do deploy:
 
@@ -82,7 +78,7 @@ ou
 https://vjpeventos.vercel.app/admin
 ```
 
-## 6. O que o painel administra
+## 5. O que o painel administra
 
 - login e logout;
 - Dashboard com totais;
@@ -97,7 +93,7 @@ https://vjpeventos.vercel.app/admin
 - ordenação;
 - exclusão da mídia e do Blob correspondente.
 
-## 7. Páginas conectadas
+## 6. Páginas conectadas
 
 | Página | Slug |
 |---|---|
@@ -112,7 +108,7 @@ https://vjpeventos.vercel.app/admin
 | Decoração Residencial | `decoracao-residencial` |
 | Especial Natal | `especial-natal` |
 
-## 8. Segurança
+## 7. Segurança
 
 O navegador nunca recebe `DATABASE_URL` nem `BLOB_READ_WRITE_TOKEN`.
 
