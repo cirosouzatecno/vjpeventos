@@ -30,7 +30,7 @@
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 1, '--grid-row': '1/2', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2', 'aspect-ratio': '16 / 9', 'width': '100%' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="dco9jz"
-            src="https://www.youtube.com/embed/dco9jz2aL7o?autoplay=1&controls=1&loop=1&playlist=dco9jz2aL7o&playsinline=1&mute=1"
+            src="https://www.youtube.com/embed/dco9jz2aL7o?autoplay=0&controls=1&playsinline=1"
             provider="youtube"
             jpg="https://i.ytimg.com/vi/dco9jz2aL7o/hqdefault.jpg"
             webp="https://i.ytimg.com/vi_webp/dco9jz2aL7o/hqdefault.webp"
@@ -41,7 +41,7 @@
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 2, '--grid-row': '4/5', '--grid-column': '2/5', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="zrLOTN"
-            src="https://www.youtube.com/embed/rLOTNCj1x1g?h=null&playlist=rLOTNCj1x1g&autoplay=1&controls=0&loop=1&autopause=0&playsinline=1&mute=1"
+            src="https://www.youtube.com/embed/rLOTNCj1x1g?autoplay=0&controls=1&playsinline=1"
             provider="youtube"
             jpg="https://i.ytimg.com/vi/rLOTNCj1x1g/hqdefault.jpg"
             webp="https://i.ytimg.com/vi_webp/rLOTNCj1x1g/hqdefault.webp"
@@ -52,7 +52,7 @@
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 3, '--grid-row': '6/7', '--grid-column': '2/5', '--m-grid-row': '5/6', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="zPDJEu"
-            src="https://www.youtube.com/embed/m7OETuDX684?h=null&playlist=m7OETuDX684&autoplay=1&controls=0&loop=1&autopause=0&playsinline=1&mute=1"
+            src="https://www.youtube.com/embed/m7OETuDX684?autoplay=0&controls=1&playsinline=1"
             provider="youtube"
             jpg="https://i.ytimg.com/vi/m7OETuDX684/hqdefault.jpg"
             webp="https://i.ytimg.com/vi_webp/m7OETuDX684/hqdefault.webp"
@@ -62,7 +62,7 @@
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 4, '--grid-row': '8/9', '--grid-column': '3/4', '--m-grid-row': '7/8', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="z2a8vn"
-            src="https://www.youtube.com/embed/jol6xQvyitk?h=null&playlist=jol6xQvyitk&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0"
+            src="https://www.youtube.com/embed/jol6xQvyitk?autoplay=0&controls=1&playsinline=1"
             provider="youtube"
             jpg="https://i.ytimg.com/vi/jol6xQvyitk/hqdefault.jpg"
             webp="https://i.ytimg.com/vi_webp/jol6xQvyitk/hqdefault.webp"
