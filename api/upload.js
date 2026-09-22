@@ -1,5 +1,5 @@
 import { handleUpload } from '@vercel/blob/client'
-import { requireAdmin } from './_lib/auth.js'
+import { currentAdmin } from './_lib/auth.js'
 import { json, methodNotAllowed } from './_lib/http.js'
 
 export default async function handler(req, res) {
@@ -10,7 +10,7 @@ export default async function handler(req, res) {
       body: req.body,
       request: req,
       onBeforeGenerateToken: async (pathname) => {
-        const admin = await requireAdmin(req, res)
+        const admin = await currentAdmin(req)
         if (!admin) throw new Error('Não autorizado.')
         return {
           allowedContentTypes: ['image/jpeg', 'image/png', 'image/webp', 'image/gif', 'video/mp4', 'video/webm', 'video/quicktime'],
