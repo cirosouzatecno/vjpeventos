@@ -29,7 +29,7 @@ Ainda no projeto `vjpeventos`, crie/conecte um **Vercel Blob**.
 
 O projeto atual usa o modelo moderno da Vercel com **OIDC**, então não depende de `BLOB_READ_WRITE_TOKEN`. A integração fornece `BLOB_STORE_ID` e as Vercel Functions recebem credenciais OIDC de curta duração automaticamente.
 
-O store pode permanecer **privado**. O CMS grava as mídias com `access: 'private'` e gera URLs assinadas de leitura para exibição no site.
+O store permanece **privado**. O CMS gera uma URL assinada de PUT para o navegador enviar o arquivo diretamente ao Blob e gera URLs assinadas de GET para exibição no site.
 
 Depois de conectar os recursos, faça um novo deploy para que as novas variáveis sejam incorporadas às Vercel Functions.
 
@@ -82,7 +82,7 @@ https://vjpeventos.vercel.app/admin
 - Dashboard com totais;
 - criação, edição e remoção de categorias;
 - galeria individual por categoria;
-- upload direto para Vercel Blob;
+- upload direto para Vercel Blob privado via URL assinada de PUT;
 - fotos, vídeos e vídeos do YouTube;
 - título, legenda e texto alternativo;
 - publicação/despublicação;
