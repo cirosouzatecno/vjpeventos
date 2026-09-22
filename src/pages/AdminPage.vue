@@ -205,6 +205,7 @@
             <input type="file" accept="image/*,video/mp4,video/webm,video/quicktime" @change="onFileChange" />
             <strong>{{ selectedFile ? selectedFile.name : 'Escolher foto ou vídeo' }}</strong>
             <span>Imagens e vídeos. Para fotos, prefira JPG ou WebP otimizados.</span>
+            <span v-if="busy && uploadProgress > 0">Enviando {{ uploadProgress }}%</span>
           </label>
           <label v-else-if="sourceMode === 'youtube'">Link ou ID do YouTube<input v-model.trim="mediaForm.youtube_id" placeholder="https://youtube.com/watch?v=..." /></label>
           <label v-else>URL da imagem ou vídeo<input v-model.trim="mediaForm.image_url" type="url" placeholder="https://..." /></label>
@@ -226,7 +227,7 @@
 
 <script setup>
 import { computed, onMounted, reactive, ref } from 'vue'
-import { isAdmin, requireSupabase, supabase, youtubeThumbnail } from '@/lib/supabase.js'
+import { upload } from '@vercel/blob/client'
 
 const session = ref(null)
 const email = ref('')
@@ -246,11 +247,12 @@ const categoryModal = ref(false)
 const mediaModal = ref(false)
 const sourceMode = ref('upload')
 const selectedFile = ref(null)
+const uploadProgress = ref(0)
 
 const categoryForm = reactive({ id: '', name: '', slug: '', route_path: '', sort_order: 0, is_active: true })
 const mediaForm = reactive({
   id: '', title: '', caption: '', alt_text: '', category_id: '', media_type: 'image',
-  image_url: '', storage_path: '', youtube_id: '', featured: false, published: true, sort_order: 0,
+  image_url: '', youtube_id: '', featured: false, published: true, sort_order: 0,
 })
 
 const currentCategory = computed(() => categories.value.find((c) => c.id === activeCategoryId.value))
@@ -267,10 +269,27 @@ const filteredMedia = computed(() => {
   return media.value.filter((item) => {
     if (activeCategoryId.value && item.category_id !== activeCategoryId.value) return false
     if (typeFilter.value && itemType(item) !== typeFilter.value) return false
-    if (term && !`${item.title || ''} ${item.caption || ''}`.toLowerCase().includes(term)) return false
+    if (term && !(`${item.title || ''} ${item.caption || ''}`).toLowerCase().includes(term)) return false
     return true
   })
 })
+
+async function api(path, options = {}) {
+  const request = { credentials: 'same-origin', ...options }
+  request.headers = { ...(options.headers || {}) }
+  if (options.body && typeof options.body !== 'string') {
+    request.headers['Content-Type'] = 'application/json'
+    request.body = JSON.stringify(options.body)
+  }
+  const response = await fetch(path, request)
+  let data = {}
+  try { data = await response.json() } catch {}
+  if (!response.ok) {
+    if (response.status === 401) session.value = null
+    throw new Error(data.error || `Falha na requisição (${response.status}).`)
+  }
+  return data
+}
 
 function clearMessages() {
   error.value = ''
@@ -300,6 +319,9 @@ function itemType(item) {
 function mediaLabel(item) {
   return { image: 'Foto', video: 'Vídeo', youtube: 'YouTube' }[itemType(item)] || 'Mídia'
 }
+function youtubeThumbnail(id) {
+  return id ? `https://i.ytimg.com/vi/${id}/maxresdefault.jpg` : ''
+}
 function previewUrl(item) {
   if (itemType(item) === 'youtube' && item.youtube_id) return youtubeThumbnail(item.youtube_id)
   if (itemType(item) === 'image') return item.image_url || ''
@@ -316,20 +338,28 @@ function safeName(name) {
   const base = dot >= 0 ? name.slice(0, dot) : name
   return `${slugify(base) || 'arquivo'}${ext}`
 }
+function mediaPayload(source) {
+  return {
+    id: source.id || undefined,
+    title: source.title || '',
+    caption: source.caption || null,
+    alt_text: source.alt_text || source.title || null,
+    category_id: source.category_id || null,
+    media_type: source.media_type || itemType(source),
+    image_url: source.image_url || null,
+    youtube_id: source.youtube_id || null,
+    featured: Boolean(source.featured),
+    published: source.published !== false,
+    sort_order: Number(source.sort_order) || 0,
+  }
+}
 
 async function login() {
   clearMessages()
   busy.value = true
   try {
-    const client = requireSupabase()
-    const { data, error: loginError } = await client.auth.signInWithPassword({ email: email.value, password: password.value })
-    if (loginError) throw loginError
-    const allowed = await isAdmin()
-    if (!allowed) {
-      await client.auth.signOut()
-      throw new Error('Este usuário não possui permissão administrativa.')
-    }
-    session.value = data.session
+    const result = await api('/api/auth', { method: 'POST', body: { email: email.value, password: password.value } })
+    session.value = result.user
     password.value = ''
     await load()
   } catch (e) {
@@ -340,7 +370,7 @@ async function login() {
 }
 
 async function logout() {
-  await supabase?.auth.signOut()
+  try { await api('/api/auth', { method: 'DELETE' }) } catch {}
   session.value = null
   menuOpen.value = false
 }
@@ -349,15 +379,12 @@ async function load() {
   loading.value = true
   clearMessages()
   try {
-    const client = requireSupabase()
     const [categoryResult, mediaResult] = await Promise.all([
-      client.from('categories').select('*').order('sort_order', { ascending: true }).order('name', { ascending: true }),
-      client.from('media_items').select('*').order('sort_order', { ascending: true }).order('created_at', { ascending: false }),
+      api('/api/categories'),
+      api('/api/media'),
     ])
-    if (categoryResult.error) throw categoryResult.error
-    if (mediaResult.error) throw mediaResult.error
-    categories.value = categoryResult.data || []
-    media.value = mediaResult.data || []
+    categories.value = categoryResult.categories || []
+    media.value = mediaResult.media || []
   } catch (e) {
     error.value = e?.message || 'Falha ao carregar o conteúdo.'
   } finally {
@@ -393,19 +420,15 @@ async function saveCategory() {
   clearMessages()
   busy.value = true
   try {
-    const client = requireSupabase()
     const payload = {
+      id: categoryForm.id || undefined,
       name: categoryForm.name,
       slug: slugify(categoryForm.slug || categoryForm.name),
       route_path: categoryForm.route_path || null,
       sort_order: Number(categoryForm.sort_order) || 0,
       is_active: categoryForm.is_active,
-      updated_at: new Date().toISOString(),
     }
-    const result = categoryForm.id
-      ? await client.from('categories').update(payload).eq('id', categoryForm.id)
-      : await client.from('categories').insert(payload)
-    if (result.error) throw result.error
+    await api('/api/categories', { method: categoryForm.id ? 'PATCH' : 'POST', body: payload })
     categoryModal.value = false
     await load()
     flash('Categoria salva com sucesso.')
@@ -423,18 +446,23 @@ async function removeCategory(category) {
     return
   }
   if (!window.confirm(`Remover a categoria "${category.name}"?`)) return
-  const result = await requireSupabase().from('categories').delete().eq('id', category.id)
-  if (result.error) error.value = result.error.message
-  else { await load(); flash('Categoria removida.') }
+  try {
+    await api(`/api/categories?id=${encodeURIComponent(category.id)}`, { method: 'DELETE' })
+    await load()
+    flash('Categoria removida.')
+  } catch (e) {
+    error.value = e?.message || 'Não foi possível remover a categoria.'
+  }
 }
 
 function startNewMedia() {
   Object.assign(mediaForm, {
     id: '', title: '', caption: '', alt_text: '', category_id: activeCategoryId.value || '',
-    media_type: 'image', image_url: '', storage_path: '', youtube_id: '',
+    media_type: 'image', image_url: '', youtube_id: '',
     featured: false, published: true, sort_order: filteredMedia.value.length,
   })
   selectedFile.value = null
+  uploadProgress.value = 0
   sourceMode.value = 'upload'
   mediaModal.value = true
 }
@@ -442,37 +470,36 @@ function editMedia(item) {
   Object.assign(mediaForm, {
     id: item.id, title: item.title || '', caption: item.caption || '', alt_text: item.alt_text || '',
     category_id: item.category_id || '', media_type: itemType(item), image_url: item.image_url || '',
-    storage_path: item.storage_path || '', youtube_id: item.youtube_id || '',
-    featured: Boolean(item.featured), published: item.published !== false, sort_order: item.sort_order ?? 0,
+    youtube_id: item.youtube_id || '', featured: Boolean(item.featured),
+    published: item.published !== false, sort_order: item.sort_order ?? 0,
   })
   selectedFile.value = null
-  sourceMode.value = item.youtube_id ? 'youtube' : (item.storage_path ? 'upload' : 'url')
+  uploadProgress.value = 0
+  sourceMode.value = item.youtube_id ? 'youtube' : (item.image_url?.includes('.blob.vercel-storage.com') ? 'upload' : 'url')
   mediaModal.value = true
 }
 function closeMediaModal() {
   mediaModal.value = false
   selectedFile.value = null
+  uploadProgress.value = 0
 }
 function onFileChange(event) {
   selectedFile.value = event.target.files?.[0] || null
+  uploadProgress.value = 0
 }
 
 async function uploadSelectedFile() {
   if (!selectedFile.value) return null
-  const client = requireSupabase()
   const category = categories.value.find((c) => c.id === mediaForm.category_id)
   const folder = category?.slug || 'sem-categoria'
-  const path = `${folder}/${Date.now()}-${safeName(selectedFile.value.name)}`
-  const { error: uploadError } = await client.storage.from('site-media').upload(path, selectedFile.value, {
-    cacheControl: '3600',
-    upsert: false,
-    contentType: selectedFile.value.type || undefined,
+  const pathname = `${folder}/${Date.now()}-${safeName(selectedFile.value.name)}`
+  const blob = await upload(pathname, selectedFile.value, {
+    access: 'public',
+    handleUploadUrl: '/api/upload',
+    onUploadProgress: ({ percentage }) => { uploadProgress.value = Math.round(percentage) },
   })
-  if (uploadError) throw uploadError
-  const { data } = client.storage.from('site-media').getPublicUrl(path)
   return {
-    url: data.publicUrl,
-    path,
+    url: blob.url,
     type: selectedFile.value.type?.startsWith('video/') ? 'video' : 'image',
   }
 }
@@ -480,41 +507,23 @@ async function uploadSelectedFile() {
 async function saveMedia() {
   clearMessages()
   busy.value = true
-  let uploaded = null
   try {
-    const client = requireSupabase()
-    uploaded = sourceMode.value === 'upload' ? await uploadSelectedFile() : null
+    const uploaded = sourceMode.value === 'upload' ? await uploadSelectedFile() : null
     const youtubeId = sourceMode.value === 'youtube' ? normalizeYoutube(mediaForm.youtube_id) : ''
-    const mediaType = youtubeId ? 'youtube' : (uploaded?.type || (sourceMode.value === 'url' ? itemType({ image_url: mediaForm.image_url }) : mediaForm.media_type))
+    const mediaType = youtubeId
+      ? 'youtube'
+      : (uploaded?.type || (sourceMode.value === 'url' ? itemType({ image_url: mediaForm.image_url }) : mediaForm.media_type))
     const payload = {
-      title: mediaForm.title,
-      caption: mediaForm.caption || null,
-      alt_text: mediaForm.alt_text || mediaForm.title,
-      category_id: mediaForm.category_id || null,
+      ...mediaPayload(mediaForm),
       media_type: mediaType,
       image_url: uploaded?.url || (youtubeId ? null : mediaForm.image_url || null),
-      storage_path: uploaded?.path || mediaForm.storage_path || null,
       youtube_id: youtubeId || null,
-      featured: mediaForm.featured,
-      published: mediaForm.published,
-      sort_order: Number(mediaForm.sort_order) || 0,
-      updated_at: new Date().toISOString(),
     }
-
-    const result = mediaForm.id
-      ? await client.from('media_items').update(payload).eq('id', mediaForm.id)
-      : await client.from('media_items').insert(payload)
-    if (result.error) throw result.error
-
-    if (uploaded && mediaForm.id && mediaForm.storage_path && mediaForm.storage_path !== uploaded.path) {
-      await client.storage.from('site-media').remove([mediaForm.storage_path])
-    }
-
+    await api('/api/media', { method: mediaForm.id ? 'PATCH' : 'POST', body: payload })
     closeMediaModal()
     await load()
     flash('Mídia salva e atualizada no site.')
   } catch (e) {
-    if (uploaded?.path) await supabase?.storage.from('site-media').remove([uploaded.path])
     error.value = e?.message || 'Não foi possível salvar a mídia.'
   } finally {
     busy.value = false
@@ -524,22 +533,24 @@ async function saveMedia() {
 async function removeMedia(item) {
   clearMessages()
   if (!window.confirm(`Excluir "${item.title || 'esta mídia'}" do site?`)) return
-  const client = requireSupabase()
-  const result = await client.from('media_items').delete().eq('id', item.id)
-  if (result.error) { error.value = result.error.message; return }
-  if (item.storage_path) await client.storage.from('site-media').remove([item.storage_path])
-  await load()
-  flash('Mídia excluída.')
+  try {
+    await api(`/api/media?id=${encodeURIComponent(item.id)}`, { method: 'DELETE' })
+    await load()
+    flash('Mídia excluída.')
+  } catch (e) {
+    error.value = e?.message || 'Não foi possível excluir a mídia.'
+  }
 }
 
 async function moveMedia(item, categoryId) {
   clearMessages()
-  const result = await requireSupabase().from('media_items').update({
-    category_id: categoryId || null,
-    updated_at: new Date().toISOString(),
-  }).eq('id', item.id)
-  if (result.error) error.value = result.error.message
-  else { item.category_id = categoryId || null; flash('Mídia movida para a nova categoria.') }
+  try {
+    await api('/api/media', { method: 'PATCH', body: mediaPayload({ ...item, category_id: categoryId || null }) })
+    item.category_id = categoryId || null
+    flash('Mídia movida para a nova categoria.')
+  } catch (e) {
+    error.value = e?.message || 'Não foi possível mover a mídia.'
+  }
 }
 
 async function shiftOrder(item, direction) {
@@ -547,32 +558,29 @@ async function shiftOrder(item, direction) {
   const index = list.findIndex((entry) => entry.id === item.id)
   const target = list[index + direction]
   if (!target) return
-  const client = requireSupabase()
+
   const currentOrder = item.sort_order ?? index
   const targetOrder = target.sort_order ?? index + direction
-  const [a, b] = await Promise.all([
-    client.from('media_items').update({ sort_order: targetOrder }).eq('id', item.id),
-    client.from('media_items').update({ sort_order: currentOrder }).eq('id', target.id),
-  ])
-  if (a.error || b.error) error.value = a.error?.message || b.error?.message
-  else await load()
+  try {
+    await Promise.all([
+      api('/api/media', { method: 'PATCH', body: mediaPayload({ ...item, sort_order: targetOrder }) }),
+      api('/api/media', { method: 'PATCH', body: mediaPayload({ ...target, sort_order: currentOrder }) }),
+    ])
+    await load()
+  } catch (e) {
+    error.value = e?.message || 'Não foi possível alterar a ordem.'
+  }
 }
 
 onMounted(async () => {
-  if (!supabase) {
-    error.value = 'Supabase não configurado. Defina VITE_SUPABASE_URL e VITE_SUPABASE_PUBLISHABLE_KEY na Vercel.'
-    return
+  try {
+    const status = await api('/api/auth')
+    if (!status.authenticated) return
+    session.value = status.user
+    await load()
+  } catch (e) {
+    error.value = e?.message || 'A infraestrutura de dados ainda não está configurada na Vercel.'
   }
-  const { data } = await supabase.auth.getSession()
-  if (!data.session) return
-  const allowed = await isAdmin()
-  if (!allowed) {
-    await supabase.auth.signOut()
-    error.value = 'Este usuário não possui permissão administrativa.'
-    return
-  }
-  session.value = data.session
-  await load()
 })
 </script>
 
