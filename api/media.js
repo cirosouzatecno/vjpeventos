@@ -4,6 +4,7 @@ import { db } from './_lib/db.js'
 import { requireAdmin } from './_lib/auth.js'
 import { body, json, methodNotAllowed } from './_lib/http.js'
 import { ensureDatabase } from './_lib/setup.js'
+import { withSignedDisplayUrls } from './_lib/blob.js'
 
 export default async function handler(req, res) {
   try {
@@ -13,7 +14,7 @@ export default async function handler(req, res) {
     const sql = db()
     if (req.method === 'GET') {
       const media = await sql`select * from media_items order by sort_order asc, created_at desc`
-      return json(res, 200, { media })
+      return json(res, 200, { media: await withSignedDisplayUrls(media) })
     }
 
     if (req.method === 'POST') {
