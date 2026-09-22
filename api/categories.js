@@ -9,11 +9,10 @@ function slugify(value) {
 }
 
 export default async function handler(req, res) {
-  await ensureDatabase()
-  const admin = await requireAdmin(req, res)
-  if (!admin) return
-
   try {
+    await ensureDatabase()
+    const admin = await requireAdmin(req, res)
+    if (!admin) return
     const sql = db()
     if (req.method === 'GET') {
       const categories = await sql`select * from categories order by sort_order asc, name asc`
