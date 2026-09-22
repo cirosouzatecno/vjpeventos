@@ -5,6 +5,7 @@ const routes = [
   { path: '/projetos', component: () => import('@/pages/ProjetosPage.vue') },
   { path: '/corporativo', component: () => import('@/pages/CorporativoPage.vue') },
   { path: '/festas', component: () => import('@/pages/FestasPage.vue') },
+  { path: '/festas-2', component: () => import('@/pages/Festas2Page.vue') },
   { path: '/batizado', component: () => import('@/pages/BatizadoPage.vue') },
   { path: '/15-anos', component: () => import('@/pages/Page15AnosPage.vue') },
   { path: '/casamento', component: () => import('@/pages/CasamentoPage.vue') },
