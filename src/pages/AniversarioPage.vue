@@ -36,7 +36,7 @@
 </template>
 
 <script setup>
-import { useHead } from '@unhead/vue'
+import { usePageSeo } from './shared/seo.js'
 import Page from '@/components/builder/Page.vue'
 import Header from '@/pages/shared/Header.vue'
 import Footer from '@/pages/shared/Footer.vue'
@@ -46,7 +46,12 @@ import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
 import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
 
-useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Aniversários em São José do Rio Preto | V J Produções e Eventos' })
+usePageSeo({
+  title: "Aniversários em São José do Rio Preto | V J Produções e Eventos",
+  description: "Decoração de aniversários em São José do Rio Preto - SP, com cenografia, ambientação e projetos personalizados para diferentes estilos de festa.",
+  path: "/aniversario",
+  serviceName: "Decoração de Aniversários",
+})
 
 const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração de Aniversários em São José do Rio Preto - SP</h1>'
 const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }

@@ -35,7 +35,7 @@
 
 <script setup>
 import { onBeforeUnmount, ref, watch } from 'vue'
-import { useHead } from '@unhead/vue'
+import { usePageSeo } from './shared/seo.js'
 import Page from '@/components/builder/Page.vue'
 import Header from '@/pages/shared/Header.vue'
 import Footer from '@/pages/shared/Footer.vue'
@@ -51,7 +51,12 @@ import image8 from '@/assets/natal/8.jpg'
 import image9 from '@/assets/natal/9.jpg'
 import image11 from '@/assets/natal/11.jpg'
 
-useHead({ htmlAttrs: { lang: 'pt-BR' }, title: 'Decoração de Natal em São José do Rio Preto | V J Produções e Eventos', meta: [{ name: 'description', content: 'Galeria de inspirações natalinas da V J Produções e Eventos em São José do Rio Preto - SP.' }] })
+usePageSeo({
+  title: "Decoração de Natal em São José do Rio Preto | V J Produções e Eventos",
+  description: "Decoração de Natal em São José do Rio Preto - SP para residências, empresas e eventos, com projetos personalizados e ambientações especiais.",
+  path: "/especial-natal",
+  serviceName: "Decoração de Natal",
+})
 
 const galleryImages = [
   { id: 11, src: image11, alt: 'Árvore de Natal com laços vermelhos e luzes douradas', caption: 'Natal clássico em vermelho e dourado', featured: true },

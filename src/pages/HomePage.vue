@@ -86,7 +86,7 @@
 </template>
 
 <script setup>
-import { useHead } from '@unhead/vue'
+import { usePageSeo } from './shared/seo.js'
 import Page from '@/components/builder/Page.vue'
 import Header from '@/pages/shared/Header.vue'
 import Footer from '@/pages/shared/Footer.vue'
@@ -95,12 +95,11 @@ import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridEmbed from '@/components/builder/elements/GridEmbed.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
 
-useHead({
-  htmlAttrs: { lang: 'pt-BR' },
-  title: 'Decoração de Eventos em São José do Rio Preto | V J Produções e Eventos',
-  meta: [
-    { name: 'description', content: 'Explore nosso site dedicado a projetos de decoração de festas, incluindo eventos corporativos e festas de 15 anos. Transforme suas celebrações com nossas ideias criativas e soluções personalizadas em decoração de festas, decoração de eventos.' },
-  ],
+usePageSeo({
+  title: "Decoração de Eventos em São José do Rio Preto | V J Produções e Eventos",
+  description: "V J Produções e Eventos cria decoração, ambientação e projetos para casamentos, festas, eventos corporativos e celebrações em São José do Rio Preto - SP.",
+  path: "/",
+  serviceName: "Decoração e Produção de Eventos",
 })
 
 const cssVars = {
