@@ -1,52 +1,81 @@
 import { randomUUID } from 'node:crypto'
-import { del, issueSignedToken, presignUrl, put } from '@vercel/blob'
+import { del, issueSignedToken, presignUrl } from '@vercel/blob'
 import { json, methodNotAllowed } from './_lib/http.js'
+
+function rawBlobUrl(pathname) {
+  const storeId = String(process.env.BLOB_STORE_ID || '').replace(/^store_/, '')
+  const encoded = pathname.split('/').map(encodeURIComponent).join('/')
+  return `https://${storeId}.private.blob.vercel-storage.com/${encoded}`
+}
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') return methodNotAllowed(res, ['GET'])
   const pathname = `health/${randomUUID()}.txt`
-  let blob = null
-  let presignedUrl = ''
-  let step = 'put'
+  const blobUrl = rawBlobUrl(pathname)
+  let step = 'issue-put'
   try {
-    blob = await put(pathname, 'ok', { access: 'private' })
-    step = 'issue-token'
-    const token = await issueSignedToken({
+    const putUntil = Date.now() + 5 * 60 * 1000
+    const putToken = await issueSignedToken({
       pathname,
-      operations: ['get'],
-      validUntil: Date.now() + 5 * 60 * 1000,
+      operations: ['put'],
+      validUntil: putUntil,
+      allowedContentTypes: ['text/plain'],
+      maximumSizeInBytes: 1024,
       storeId: process.env.BLOB_STORE_ID,
     })
-    step = 'presign'
-    const signed = await presignUrl(token, {
+    step = 'presign-put'
+    const { presignedUrl: uploadUrl } = await presignUrl(putToken, {
+      pathname,
+      operation: 'put',
+      access: 'private',
+      validUntil: putUntil,
+      allowedContentTypes: ['text/plain'],
+      maximumSizeInBytes: 1024,
+    })
+    step = 'put'
+    const putResponse = await fetch(uploadUrl, {
+      method: 'PUT',
+      headers: { 'content-type': 'text/plain' },
+      body: 'ok',
+    })
+    if (!putResponse.ok) throw new Error(`PUT retornou ${putResponse.status}`)
+
+    step = 'issue-get'
+    const getUntil = Date.now() + 5 * 60 * 1000
+    const getToken = await issueSignedToken({
+      pathname,
+      operations: ['get'],
+      validUntil: getUntil,
+      storeId: process.env.BLOB_STORE_ID,
+    })
+    step = 'presign-get'
+    const { presignedUrl: readUrl } = await presignUrl(getToken, {
       pathname,
       operation: 'get',
+      access: 'private',
       validUntil: Date.now() + 60 * 1000,
     })
-    presignedUrl = signed.presignedUrl
-    step = 'read'
-    const read = await fetch(presignedUrl)
-    const body = await read.text()
+    step = 'get'
+    const readResponse = await fetch(readUrl)
+    const text = await readResponse.text()
+    if (!readResponse.ok || text !== 'ok') throw new Error(`GET retornou ${readResponse.status}`)
+
     step = 'delete'
-    await del(blob.url)
+    await del(blobUrl)
     return json(res, 200, {
       databaseConfigured: Boolean(process.env.DATABASE_URL),
-      blobWriteOk: true,
-      blobSignedReadOk: read.ok && body === 'ok',
       blobStoreIdPresent: Boolean(process.env.BLOB_STORE_ID),
-      signedHost: new URL(presignedUrl).hostname,
+      signedPutOk: true,
+      signedGetOk: true,
+      deleteOk: true,
     })
   } catch (error) {
-    if (blob?.url) {
-      try { await del(blob.url) } catch {}
-    }
+    try { await del(blobUrl) } catch {}
     return json(res, 500, {
       databaseConfigured: Boolean(process.env.DATABASE_URL),
       blobStoreIdPresent: Boolean(process.env.BLOB_STORE_ID),
       failedStep: step,
-      signedHost: presignedUrl ? new URL(presignedUrl).hostname : null,
       causeCode: error?.cause?.code || null,
-      causeMessage: error?.cause?.message || null,
       error: error.message || 'Falha no teste do Blob.',
     })
   }
