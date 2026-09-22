@@ -4,7 +4,7 @@ function isPrivateBlobUrl(value) {
   if (!value) return false
   try {
     const url = new URL(value)
-    return url.hostname.endsWith('.blob.vercel-storage.com')
+    return url.hostname.endsWith('.private.blob.vercel-storage.com')
   } catch {
     return false
   }
