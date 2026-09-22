@@ -1,4 +1,4 @@
-import { createHash, randomBytes, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto'
+import { createHash, randomBytes, randomUUID, scrypt as scryptCallback, timingSafeEqual } from 'node:crypto'
 import { promisify } from 'node:util'
 import { db } from './db.js'
 
@@ -40,7 +40,7 @@ export async function createSession(res, userId) {
   const expires = new Date(Date.now() + SESSION_SECONDS * 1000)
   const sql = db()
   await sql`insert into admin_sessions (id, user_id, token_hash, expires_at)
-            values (${crypto.randomUUID()}, ${userId}, ${hash}, ${expires.toISOString()})`
+            values (${randomUUID()}, ${userId}, ${hash}, ${expires.toISOString()})`
   res.setHeader('Set-Cookie', `${COOKIE}=${encodeURIComponent(token)}; Path=/; HttpOnly; Secure; SameSite=Strict; Max-Age=${SESSION_SECONDS}`)
 }
 
