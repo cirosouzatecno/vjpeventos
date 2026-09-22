@@ -1,4 +1,6 @@
 <template>
+  <ManagedMediaGallery v-if="showFeaturedGallery" :featured="true" title="Destaques" />
+  <ManagedMediaGallery v-else-if="managedCategorySlug" :category-slug="managedCategorySlug" />
   <BlockLayout
     blockId="zRgwg5"
     htmlId="zRgwg5"
@@ -84,10 +86,29 @@
 </template>
 
 <script setup>
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+import ManagedMediaGallery from '@/components/site/ManagedMediaGallery.vue'
 import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
 import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
 import GridSocialIcons from '@/components/builder/elements/GridSocialIcons.vue'
+
+const route = useRoute()
+const categoryByPath = {
+  '/projetos': 'projetos',
+  '/corporativo': 'corporativo',
+  '/festas': 'festas',
+  '/batizado': 'batizado',
+  '/15-anos': '15-anos',
+  '/casamento': 'casamento',
+  '/cerimonia': 'cerimonia',
+  '/aniversario': 'aniversario',
+  '/decoracao-residencial': 'decoracao-residencial',
+  '/especial-natal': 'especial-natal',
+}
+const managedCategorySlug = computed(() => categoryByPath[route.path] || '')
+const showFeaturedGallery = computed(() => route.path === '/')
 
 const contatoContent = '<p dir="auto" class="body" style="color: rgb(242, 237, 229); --lineHeightMobile: 1.3; --fontSizeMobile: 32px;"><span style="font-weight: 700;"><strong>Contato</strong></span></p>'
 const enderecoContent = '<p dir="auto" class="body" style="color: rgb(180, 162, 136);">R. Dr. Carlos Rodrigues Nogueira, 1060 - Jardim Vivendas, São José do Rio Preto - SP, 15090-415</p>'
