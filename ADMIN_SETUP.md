@@ -27,13 +27,9 @@ Habilite a integração para **Production** e **Preview**.
 
 Ainda no projeto `vjpeventos`, crie/conecte um **Vercel Blob**.
 
-A Vercel deve disponibilizar:
+O projeto atual usa o modelo moderno da Vercel com **OIDC**, então não depende de `BLOB_READ_WRITE_TOKEN`. A integração fornece `BLOB_STORE_ID` e as Vercel Functions recebem credenciais OIDC de curta duração automaticamente.
 
-```
-BLOB_READ_WRITE_TOKEN
-```
-
-O token fica somente no servidor. Ele não é exposto como variável `VITE_*`.
+O store pode permanecer **privado**. O CMS grava as mídias com `access: 'private'` e gera URLs assinadas de leitura para exibição no site.
 
 Depois de conectar os recursos, faça um novo deploy para que as novas variáveis sejam incorporadas às Vercel Functions.
 
@@ -112,8 +108,8 @@ https://vjpeventos.vercel.app/admin
 
 ## 7. Segurança
 
-O navegador nunca recebe `DATABASE_URL` nem `BLOB_READ_WRITE_TOKEN`.
+O navegador nunca recebe `DATABASE_URL` nem credenciais permanentes do Blob.
 
 Operações administrativas passam pelas Vercel Functions e exigem cookie de sessão `HttpOnly` com `SameSite=Strict`. As sessões são armazenadas no Postgres com somente o hash do token.
 
-O endpoint público `/api/content` entrega somente mídias marcadas como publicadas.
+O Blob usa OIDC de curta duração. As mídias ficam privadas no storage e o endpoint público `/api/content` entrega somente itens publicados com URLs assinadas temporárias para leitura.
