@@ -71,7 +71,6 @@
 
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref, watch } from 'vue'
-import { supabase } from '@/lib/supabase.js'
 
 const props = defineProps({
   categorySlug: { type: String, default: '' },
@@ -99,59 +98,16 @@ function youtubeEmbed(id) {
 async function loadMedia() {
   items.value = []
   categoryName.value = ''
-  if (!supabase) return
-
   try {
-    if (props.featured) {
-      let query = supabase
-        .from('media_items')
-        .select('*')
-        .eq('featured', true)
-        .eq('published', true)
-        .order('sort_order', { ascending: true })
-        .order('created_at', { ascending: false })
-
-      let result = await query
-      if (result.error) {
-        result = await supabase
-          .from('media_items')
-          .select('*')
-          .eq('featured', true)
-          .order('sort_order', { ascending: true })
-          .order('created_at', { ascending: false })
-      }
-      items.value = result.data || []
-      return
-    }
-
-    if (!props.categorySlug) return
-    const categoryResult = await supabase
-      .from('categories')
-      .select('id,name,slug')
-      .eq('slug', props.categorySlug)
-      .maybeSingle()
-
-    if (categoryResult.error || !categoryResult.data) return
-    categoryName.value = categoryResult.data.name
-
-    let result = await supabase
-      .from('media_items')
-      .select('*')
-      .eq('category_id', categoryResult.data.id)
-      .eq('published', true)
-      .order('sort_order', { ascending: true })
-      .order('created_at', { ascending: false })
-
-    if (result.error) {
-      result = await supabase
-        .from('media_items')
-        .select('*')
-        .eq('category_id', categoryResult.data.id)
-        .order('sort_order', { ascending: true })
-        .order('created_at', { ascending: false })
-    }
-
-    items.value = result.data || []
+    const query = props.featured
+      ? '/api/content?featured=1'
+      : (props.categorySlug ? `/api/content?category=${encodeURIComponent(props.categorySlug)}` : '')
+    if (!query) return
+    const response = await fetch(query)
+    if (!response.ok) return
+    const data = await response.json()
+    items.value = data.items || []
+    categoryName.value = data.category?.name || ''
   } catch {
     items.value = []
   }
@@ -161,7 +117,6 @@ function openLightbox(item) {
   activeImage.value = item
   document.body.style.overflow = 'hidden'
 }
-
 function closeLightbox() {
   activeImage.value = null
   document.body.style.overflow = ''
@@ -169,9 +124,7 @@ function closeLightbox() {
 
 watch(() => [props.categorySlug, props.featured], loadMedia)
 onMounted(loadMedia)
-onBeforeUnmount(() => {
-  document.body.style.overflow = ''
-})
+onBeforeUnmount(() => { document.body.style.overflow = '' })
 </script>
 
 <style scoped>
