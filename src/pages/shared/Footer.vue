@@ -31,12 +31,27 @@
       :hasRotationFrame="false"
       :hasEntranceAnimation="false"
     >
-      <GridTextBox
-        id="zim9P1"
-        :content="enderecoContent"
-        textAlign="left"
-        textAlignMobile="center"
-      />
+      <div style="width: 100%; overflow: hidden; border: 1px solid rgba(196, 164, 74, 0.45); background: rgb(10, 18, 12);">
+        <iframe
+          title="Localização da V J Produções e Eventos no Google Maps"
+          src="https://www.google.com/maps?q=V%20J%20Produ%C3%A7%C3%B5es%20e%20Eventos%2C%20S%C3%A3o%20Jos%C3%A9%20do%20Rio%20Preto%20-%20SP&output=embed"
+          width="100%"
+          height="220"
+          style="display: block; border: 0;"
+          loading="lazy"
+          allowfullscreen
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <a
+          href="https://maps.app.goo.gl/62nBeAepMWUV8Bti8"
+          target="_blank"
+          rel="noopener noreferrer"
+          style="display: block; padding: 12px 16px; color: rgb(196, 164, 74); font-size: 14px; font-weight: 700; text-align: center; text-decoration: none;"
+          aria-label="Abrir o perfil da V J Produções e Eventos no Google Maps"
+        >
+          Abrir no Google Maps
+        </a>
+      </div>
     </LayoutElement>
 
     <LayoutElement
@@ -111,7 +126,6 @@ const managedCategorySlug = computed(() => categoryByPath[route.path] || '')
 const showFeaturedGallery = computed(() => route.path === '/')
 
 const contatoContent = '<p dir="auto" class="body" style="color: rgb(242, 237, 229); --lineHeightMobile: 1.3; --fontSizeMobile: 32px;"><span style="font-weight: 700;"><strong>Contato</strong></span></p>'
-const enderecoContent = '<p dir="auto" class="body" style="color: rgb(180, 162, 136);">R. Dr. Carlos Rodrigues Nogueira, 1060 - Jardim Vivendas, São José do Rio Preto - SP, 15090-415</p>'
 
 const blockStyle = {
   '--cols': '12',
