@@ -324,7 +324,7 @@ function youtubeThumbnail(id) {
 }
 function previewUrl(item) {
   if (itemType(item) === 'youtube' && item.youtube_id) return youtubeThumbnail(item.youtube_id)
-  if (itemType(item) === 'image') return item.image_url || ''
+  if (itemType(item) === 'image') return item.display_url || item.image_url || ''
   return ''
 }
 function normalizeYoutube(value) {
@@ -494,7 +494,7 @@ async function uploadSelectedFile() {
   const folder = category?.slug || 'sem-categoria'
   const pathname = `${folder}/${Date.now()}-${safeName(selectedFile.value.name)}`
   const blob = await upload(pathname, selectedFile.value, {
-    access: 'public',
+    access: 'private',
     handleUploadUrl: '/api/upload',
     onUploadProgress: ({ percentage }) => { uploadProgress.value = Math.round(percentage) },
   })
