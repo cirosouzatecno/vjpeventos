@@ -6,11 +6,10 @@ import { body, json, methodNotAllowed } from './_lib/http.js'
 import { ensureDatabase } from './_lib/setup.js'
 
 export default async function handler(req, res) {
-  await ensureDatabase()
-  const admin = await requireAdmin(req, res)
-  if (!admin) return
-
   try {
+    await ensureDatabase()
+    const admin = await requireAdmin(req, res)
+    if (!admin) return
     const sql = db()
     if (req.method === 'GET') {
       const media = await sql`select * from media_items order by sort_order asc, created_at desc`
