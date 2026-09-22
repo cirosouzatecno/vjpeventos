@@ -1,6 +1,7 @@
 import { db } from './_lib/db.js'
 import { json, methodNotAllowed } from './_lib/http.js'
 import { ensureDatabase } from './_lib/setup.js'
+import { withSignedPublicUrls } from './_lib/blob.js'
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') return methodNotAllowed(res, ['GET'])
@@ -17,7 +18,7 @@ export default async function handler(req, res) {
         where m.published = true and m.featured = true
         order by m.sort_order asc, m.created_at desc
       `
-      return json(res, 200, { items })
+      return json(res, 200, { items: await withSignedPublicUrls(items) })
     }
 
     if (!category) return json(res, 200, { items: [] })
@@ -37,7 +38,7 @@ export default async function handler(req, res) {
       where category_id = ${found.id} and published = true
       order by sort_order asc, created_at desc
     `
-    return json(res, 200, { category: found, items })
+    return json(res, 200, { category: found, items: await withSignedPublicUrls(items) })
   } catch (error) {
     return json(res, 500, { error: error.message || 'Falha ao consultar conteúdo.' })
   }
