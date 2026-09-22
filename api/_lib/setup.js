@@ -1,6 +1,7 @@
 import { randomUUID } from 'node:crypto'
 import { db } from './db.js'
 import { hashPassword } from './auth.js'
+import { legacyFestasMedia } from './legacy-festas-media.js'
 
 let setupPromise = null
 
@@ -170,6 +171,33 @@ async function setup() {
     await sql`
       insert into cms_migrations (key)
       values ('legacy-media-v1')
+      on conflict (key) do nothing
+    `
+  }
+
+
+  const festasMigration = await sql`select key from cms_migrations where key = 'legacy-festas-gallery-v1' limit 1`
+  if (!festasMigration[0]) {
+    const festasRows = await sql`select id from categories where slug = 'festas' limit 1`
+    const festasCategoryId = festasRows[0]?.id || null
+
+    for (const item of legacyFestasMedia) {
+      await sql`
+        insert into media_items (
+          id, category_id, title, caption, alt_text, media_type, image_url,
+          youtube_id, featured, published, sort_order, source_key
+        ) values (
+          ${randomUUID()}, ${festasCategoryId}, ${item.title},
+          ${item.caption}, ${item.alt}, ${item.media_type}, ${item.image_url},
+          ${item.youtube_id}, false, true, ${item.sort_order}, ${item.sourceKey}
+        )
+        on conflict do nothing
+      `
+    }
+
+    await sql`
+      insert into cms_migrations (key)
+      values ('legacy-festas-gallery-v1')
       on conflict (key) do nothing
     `
   }
