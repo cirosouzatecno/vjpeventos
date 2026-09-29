@@ -5,8 +5,8 @@
     logoHref="/"
     :logoSrc="logoImage"
     :isLogoVisible="true"
-    layout="desktop-3"
-    mobileLayout="mobile-1"
+    layout="desktop-5"
+    mobileLayout="mobile-3"
     mobileLinksAlignment="right"
     :isSticky="true"
     :isTransparent="false"
@@ -28,9 +28,11 @@ const navStyle = {
   '--width': '1240px',
   '--padding': '12px 16px',
   '--m-padding': '12px 16px',
-  '--logo-width': '160px',
+  '--logo-width': '300px',
+  '--logo-height': '180px',
   '--link-spacing': '32px',
-  '--m-logo-width': '64px',
+  '--m-logo-width': '180px',
+  '--m-logo-height': '110px',
   '--m-link-spacing': '21px',
   '--element-spacing': '30px',
   '--m-element-spacing': '42px',
