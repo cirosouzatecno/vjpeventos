@@ -9,7 +9,7 @@
     mobileLayout="mobile-1"
     mobileLinksAlignment="right"
     :isSticky="true"
-    :isTransparent="isTransparent"
+    :isTransparent="false"
     :style="navStyle"
     :nav="navLinks"
     :socialIcons="socialIconsData"
@@ -26,11 +26,11 @@ const props = defineProps({
 
 const navStyle = {
   '--width': '1240px',
-  '--padding': '28px 16px 28px 16px',
-  '--m-padding': '28px 16px 28px 16px',
-  '--logo-width': '208px',
+  '--padding': '12px 16px',
+  '--m-padding': '12px 16px',
+  '--logo-width': '160px',
   '--link-spacing': '32px',
-  '--m-logo-width': '77px',
+  '--m-logo-width': '64px',
   '--m-link-spacing': '21px',
   '--element-spacing': '30px',
   '--m-element-spacing': '42px',
