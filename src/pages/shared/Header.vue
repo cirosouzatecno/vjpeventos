@@ -3,12 +3,13 @@
     logoText=""
     logoAlt="VJ Projetos Especiais Produções"
     logoHref="/"
-    :isLogoVisible="false"
-    layout="desktop-3"
-    mobileLayout="mobile-1"
+    :logoSrc="logoImage"
+    :isLogoVisible="true"
+    layout="desktop-5"
+    mobileLayout="mobile-3"
     mobileLinksAlignment="right"
     :isSticky="true"
-    :isTransparent="isTransparent"
+    :isTransparent="false"
     :style="navStyle"
     :nav="navLinks"
     :socialIcons="socialIconsData"
@@ -25,11 +26,13 @@ const props = defineProps({
 
 const navStyle = {
   '--width': '1240px',
-  '--padding': '28px 16px 28px 16px',
-  '--m-padding': '28px 16px 28px 16px',
-  '--logo-width': '208px',
+  '--padding': '12px 16px',
+  '--m-padding': '12px 16px',
+  '--logo-width': '300px',
+  '--logo-height': '180px',
   '--link-spacing': '32px',
-  '--m-logo-width': '77px',
+  '--m-logo-width': '180px',
+  '--m-logo-height': '110px',
   '--m-link-spacing': '21px',
   '--element-spacing': '30px',
   '--m-element-spacing': '42px',

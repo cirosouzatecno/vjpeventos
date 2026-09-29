@@ -5,22 +5,6 @@
   >
     <Header />
     <div class="page__blocks">
-      <!-- Section 1: Hero -->
-      <BlockLayout
-        blockId="4hwoujdY3o" htmlId="4hwoujdY3o"
-        blockClassName="block block--desktop-first-visible block--mobile-first-visible"
-        innerClassName="block-layout block-layout--layout"
-        :blockStyle="s1Style"
-        :background="s1Background"
-        :backgroundImagePosition="10"
-      >
-        <LayoutElement elementId="zuCc5h" className="layout-element layout-element--layout"
-          :style="{ '--z-index': 1, '--grid-row': '2/3', '--grid-column': '1/2', '--m-grid-row': '2/3', '--m-grid-column': '1/2' }"
-          :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridEmbed id="zuCc5h" :content="audioEmbedContent" />
-        </LayoutElement>
-      </BlockLayout>
-
       <section class="home-seo-heading" aria-labelledby="home-main-title">
         <h1 id="home-main-title">Decoração de Eventos em São José do Rio Preto - SP</h1>
       </section>
@@ -96,8 +80,8 @@ import Header from '@/pages/shared/Header.vue'
 import Footer from '@/pages/shared/Footer.vue'
 import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
 import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
-import GridEmbed from '@/components/builder/elements/GridEmbed.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
+
 
 usePageSeo({
   title: "Decoração de Eventos em São José do Rio Preto | V J Produções e Eventos",
@@ -161,29 +145,6 @@ const cssVars = {
   '--grid-button-secondary-background-color-hover': 'rgba(139, 105, 20, 0.12)',
 }
 
-const audioEmbedContent = '<iframe width="0" height="0" src="https://www.youtube.com/embed/INCURvH0F7o?autoplay=1&loop=1&playlist=INCURvH0F7o&controls=0" title="YouTube audio player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
-
-const s1Style = {
-  '--rows': 11, '--width': '1224px', '--row-gap': '16px', '--row-size': '48px', '--column-gap': '24px',
-  '--block-padding': '16px 0', '--m-block-padding': '120px 16px 120px 16px',
-  '--m-grid-template-rows': '4.44vw auto 133.2078094482422px',
-  '--t-grid-template-rows': 'minmax(16px, auto) minmax(18px, auto) 1fr',
-  '--small-desktop-grid-template-rows': 'minmax(4.08vw, auto) minmax(1.47vw, auto) 54.25vw',
-  '--grid-template-rows': 'minmax(50px, auto) minmax(18px, auto) 1fr',
-  '--m-grid-template-columns': '100.00%',
-  '--grid-template-columns': '32.68% 67.32%',
-  '--m-block-min-height': 'auto',
-  '--t-block-min-height': '167.2078094482422px',
-  '--small-desktop-block-min-height': 'auto',
-  '--block-min-height': '732px',
-}
-
-const s1Background = {
-  type: 'image',
-  src: 'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1440&fit=crop',
-  srcset: 'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=375&fit=crop 375w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=768&fit=crop 768w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1024&fit=crop 1024w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1440&fit=crop 1440w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1920&fit=crop 1920w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=2560&fit=crop 2560w',
-  current: 'image',
-}
 
 const s2Style = {
   '--block-padding': '16px 0 16px 0', '--m-block-padding': '16px',
@@ -212,7 +173,7 @@ const s3Style = {
 </script>
 
 
-<style scoped>
+<style>
 .home-seo-heading {
   padding: 36px 24px 28px;
   background: rgb(0, 29, 13);
