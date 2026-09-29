@@ -17,6 +17,11 @@
         <LayoutElement elementId="zuCc5h" className="layout-element layout-element--layout"
           :style="{ '--z-index': 1, '--grid-row': '2/3', '--grid-column': '1/2', '--m-grid-row': '2/3', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
+          <div class="hero-brand" aria-label="VJ Projetos Especiais Produções">
+            <span class="hero-brand__monogram">VJ</span>
+            <span class="hero-brand__name">PROJETOS ESPECIAIS</span>
+            <span class="hero-brand__caption">PRODUÇÕES</span>
+          </div>
           <GridEmbed id="zuCc5h" :content="audioEmbedContent" />
         </LayoutElement>
       </BlockLayout>
@@ -180,10 +185,9 @@ const s1Style = {
 }
 
 const s1Background = {
-  type: 'image',
-  src: 'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1440&fit=crop',
-  srcset: 'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=375&fit=crop 375w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=768&fit=crop 768w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1024&fit=crop 1024w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1440&fit=crop 1440w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1920&fit=crop 1920w, https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=2560&fit=crop 2560w',
-  current: 'image',
+  type: 'color',
+  color: 'rgb(4, 24, 14)',
+  current: 'color',
 }
 
 const s2Style = {
@@ -213,7 +217,41 @@ const s3Style = {
 </script>
 
 
-<style scoped>
+<style>
+.hero-brand {
+  display: flex;
+  width: min(82vw, 620px);
+  min-height: 380px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10px;
+  color: rgb(196, 164, 74);
+  border: 1px solid rgba(196, 164, 74, 0.55);
+  background: radial-gradient(circle at center, rgba(196, 164, 74, 0.12), transparent 58%);
+  text-align: center;
+}
+.hero-brand__monogram {
+  font-family: Georgia, serif;
+  font-size: clamp(6rem, 16vw, 11rem);
+  line-height: 0.78;
+  font-weight: 700;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.35);
+}
+.hero-brand__name {
+  font-family: var(--font-secondary);
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
+  letter-spacing: 0.22em;
+  font-weight: 500;
+}
+.hero-brand__caption {
+  font-family: var(--font-primary);
+  font-size: 1.1rem;
+  letter-spacing: 0.3em;
+}
+
 .home-seo-heading {
   padding: 36px 24px 28px;
   background: rgb(0, 29, 13);
