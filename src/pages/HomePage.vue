@@ -99,6 +99,7 @@ import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridEmbed from '@/components/builder/elements/GridEmbed.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
 
+
 usePageSeo({
   title: "Decoração de Eventos em São José do Rio Preto | V J Produções e Eventos",
   description: "V J Produções e Eventos cria decoração, ambientação e projetos para casamentos, festas, eventos corporativos e celebrações em São José do Rio Preto - SP.",
