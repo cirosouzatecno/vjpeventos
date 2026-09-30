@@ -388,10 +388,11 @@
 		gap: var(--element-spacing, 16px);
 	}
 
-	.block-navigation__inner--desktop-5 .block-navigation__logo {
-		justify-self: center;
-		margin-right: 0;
-	}
+.block-navigation__inner--desktop-5 .block-navigation__logo {
+  justify-self: center;
+  margin-right: 0;
+  grid-area: logo;
+}
 
 	.block-navigation__inner--desktop-5 .block-navigation__links {
 		justify-content: center;
@@ -682,8 +683,12 @@
 	}
 
 	.block-navigation__inner--mobile-3 {
-		grid-template-columns: 1fr auto 1fr;
-		grid-template-areas: "hamburger-menu logo cart";
+		grid-template-columns: 1fr auto;
+		grid-template-areas: "logo hamburger-menu";
+	}
+
+	.block-navigation__inner--mobile-3 .block-navigation__logo {
+		justify-self: center;
 	}
 
 	.block-navigation__logo {

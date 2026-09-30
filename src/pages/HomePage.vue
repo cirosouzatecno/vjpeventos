@@ -5,11 +5,7 @@
   >
     <Header />
     <div class="page__blocks">
-      <section class="home-seo-heading" aria-labelledby="home-main-title">
-        <h1 id="home-main-title">Decoração de Eventos em São José do Rio Preto - SP</h1>
-      </section>
-
-      <!-- Section 2: Videos -->
+      <!-- Section 1: Videos -->
       <BlockLayout
         blockId="z9vOib" htmlId="z9vOib" blockClassName="block" innerClassName="block-layout block-layout--layout"
         :blockStyle="s2Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
