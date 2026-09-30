@@ -11,17 +11,6 @@
         :blockStyle="s2Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
       >
 
-        <LayoutElement elementId="zrLOTN" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 2, '--grid-row': '4/5', '--grid-column': '2/5', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
-          :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zrLOTN"
-            src="https://www.youtube.com/embed/rLOTNCj1x1g?autoplay=0&controls=1&playsinline=1"
-            provider="youtube"
-            jpg="https://i.ytimg.com/vi/rLOTNCj1x1g/hqdefault.jpg"
-            webp="https://i.ytimg.com/vi_webp/rLOTNCj1x1g/hqdefault.webp"
-            style="aspect-ratio: 16 / 9; width: 100%; height: 100%;"
-          />
-        </LayoutElement>
         <LayoutElement elementId="zPDJEu" className="layout-element layout-element--layout"
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 3, '--grid-row': '1/2', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
@@ -43,12 +32,6 @@
           />
         </LayoutElement>
       </BlockLayout>
-
-      <!-- Section 3: Spacer -->
-      <BlockLayout
-        blockId="z_mQ4R" htmlId="z_mQ4R" blockClassName="block" innerClassName="block-layout block-layout--layout"
-        :blockStyle="s3Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
-      />
 
       <Footer />
     </div>
@@ -140,19 +123,7 @@ const s2Style = {
   '--t-block-min-height': 'auto',
   '--small-desktop-block-min-height': 'auto',
   '--block-min-height': 'auto',
-}
-
-const s3Style = {
-  '--cols': '12', '--rows': 8, '--width': '1224px', '--m-rows': '1',
-  '--col-gap': '24px', '--row-gap': '16px', '--row-size': '48px', '--column-gap': '24px',
-  '--block-padding': '16px 0 16px 0', '--m-block-padding': '40px 16px 40px 16px',
-  '--m-grid-template-rows': ' 1fr', '--t-grid-template-rows': ' 1fr',
-  '--small-desktop-grid-template-rows': ' 1fr', '--grid-template-rows': ' 1fr',
-  '--m-grid-template-columns': '100.00%', '--grid-template-columns': '100.00%',
-  '--m-block-min-height': '43.0087890625px', '--t-block-min-height': '43.0087890625px',
-  '--small-desktop-block-min-height': '45.751633986928105vw', '--block-min-height': '560px',
-}
-</script>
+}</script>
 
 
 <style>
