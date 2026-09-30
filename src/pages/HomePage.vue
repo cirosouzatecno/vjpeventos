@@ -10,21 +10,7 @@
         blockId="z9vOib" htmlId="z9vOib" blockClassName="block" innerClassName="block-layout block-layout--layout"
         :blockStyle="s2Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
       >
-        <LayoutElement elementId="dco9jz" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 1, '--grid-row': '1/2', '--grid-column': '1/6', '--m-grid-row': '1/2', '--m-grid-column': '1/2', 'aspect-ratio': '560 / 752', 'width': '100%', 'max-width': '560px', 'justify-self': 'center' }"
-          :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="dco9jz"
-            src="/videos/home-vj.mp4"
-            provider="local"
-            :autoplay="true"
-            :muted="true"
-            :loop="true"
-            :controls="false"
-            fit="contain"
-            :frameless="true"
-            style="aspect-ratio: 560 / 752; width: 100%; height: 100%;"
-          />
-        </LayoutElement>
+
         <LayoutElement elementId="zrLOTN" className="layout-element layout-element--layout"
           :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 24px 0', '--z-index': 2, '--grid-row': '4/5', '--grid-column': '2/5', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
