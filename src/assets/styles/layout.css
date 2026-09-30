@@ -10,8 +10,8 @@
 
 .page .block--desktop-first-visible,
 .page .block:first-child {
-	padding-top: var(--header-height, 0);
-	margin-top: calc(-1 * var(--header-height, 0));
+	padding-top: 0;
+	margin-top: 0;
 }
 
 .page .block--desktop-hidden {
@@ -381,10 +381,10 @@
 	}
 
 	.block-navigation__inner--desktop-5 {
-		grid-template-columns: 1fr auto 1fr;
+		grid-template-columns: 1fr auto max-content;
 		grid-template-areas:
 			"logo logo logo"
-			"social-icons nav right-side";
+			"social-icons right-side nav";
 		gap: var(--element-spacing, 16px);
 	}
 
