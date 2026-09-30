@@ -388,10 +388,11 @@
 		gap: var(--element-spacing, 16px);
 	}
 
-	.block-navigation__inner--desktop-5 .block-navigation__logo {
-		justify-self: center;
-		margin-right: 0;
-	}
+.block-navigation__inner--desktop-5 .block-navigation__logo {
+  justify-self: center;
+  margin-right: 0;
+  grid-area: logo;
+}
 
 	.block-navigation__inner--desktop-5 .block-navigation__links {
 		justify-content: center;
@@ -682,8 +683,12 @@
 	}
 
 	.block-navigation__inner--mobile-3 {
-		grid-template-columns: 1fr auto 1fr;
-		grid-template-areas: "hamburger-menu logo cart";
+		grid-template-columns: 1fr auto;
+		grid-template-areas: "logo hamburger-menu";
+	}
+
+	.block-navigation__inner--mobile-3 .block-navigation__logo {
+		justify-self: center;
 	}
 
 	.block-navigation__logo {
@@ -798,5 +803,73 @@
 		box-shadow: none;
 		padding: 8px 0 0;
 		background: transparent;
+	}
+}
+
+/* Cabeçalho com marca dominante e menu ancorado à direita. */
+.block-navigation__inner {
+	grid-template-columns: minmax(0, 1fr) max-content;
+	grid-template-areas: "logo nav";
+	column-gap: clamp(24px, 5vw, 72px);
+}
+
+.block-navigation__logo {
+	width: min(var(--logo-width, 280px), 28vw);
+	min-width: 0;
+	max-width: 280px;
+	height: min(var(--logo-height, 96px), 96px);
+	margin-right: 0;
+}
+
+.block-navigation__logo-image {
+	width: 100%;
+	max-width: 100%;
+}
+
+.block-navigation__links {
+	justify-content: flex-end;
+}
+
+@media screen and (min-width: 921px) {
+	.block-navigation__inner {
+		grid-template-columns: minmax(220px, 1fr) minmax(0, auto);
+	}
+
+	.block-navigation__links {
+		max-width: calc(100vw - 320px);
+	}
+}
+
+.block-navigation__right-side:empty {
+	display: none;
+}
+
+@media screen and (max-width: 920px) {
+	.block-navigation__inner,
+	.block-navigation__inner--mobile-2,
+	.block-navigation__inner--mobile-3 {
+		grid-template-columns: minmax(0, 1fr) max-content;
+		grid-template-areas: "logo hamburger-menu";
+		column-gap: 16px;
+		justify-items: stretch;
+	}
+
+	.block-navigation__logo {
+		justify-self: start;
+		width: 100%;
+	}
+
+	.block-navigation__logo:has(.block-navigation__logo-image) {
+		width: min(100%, var(--m-logo-width, 260px));
+	}
+
+	.block-navigation__logo-image {
+		width: 100%;
+		max-width: 100%;
+	}
+
+	.block-navigation__hamburger {
+		justify-self: end;
+		margin: 0;
 	}
 }

@@ -37,7 +37,7 @@ const navStyle = {
   '--element-spacing': '30px',
   '--m-element-spacing': '42px',
   '--contrastBackgroundColor': 'rgba(22, 32, 24, 0.97)',
-  '--nav-bg': 'rgba(15, 26, 18, 0.92)',
+  '--nav-bg': 'rgb(0, 29, 13)',
   '--nav-link-color': 'rgb(242, 237, 229)',
   '--nav-link-text-color': 'rgb(242, 237, 229)',
   '--nav-link-color-hover': 'rgb(196, 164, 74)',
