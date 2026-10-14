@@ -5,11 +5,6 @@
   >
     <Header />
     <div class="page__blocks">
-      <BlockLayout blockId="zvCXpp" htmlId="zvCXpp"
-        blockClassName="block block--desktop-first-visible block--mobile-first-visible"
-        innerClassName="block-layout block-layout--layout"
-        :blockStyle="heroStyle" :background="heroBg" />
-
       <BlockLayout blockId="zZvzii" htmlId="zZvzii" blockClassName="block"
         innerClassName="block-layout block-layout--layout"
         :blockStyle="s2Style" :background="darkBg" :isFixed="true">
@@ -44,16 +39,16 @@ import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
 import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
-import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
+import { cssVars } from './shared/pageCommons.js'
 
 usePageSeo({
-  title: "Batizados em São José do Rio Preto | V J Produções e Eventos",
+  title: "Batizados | V J Produções e Eventos",
   description: "Decoração de batizados em São José do Rio Preto - SP, com ambientação delicada e projetos personalizados da V J Produções e Eventos.",
   path: "/batizado",
   serviceName: "Decoração de Batizados",
 })
 
-const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração de Batizados em São José do Rio Preto - SP</h1>'
+const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração de Batizados</h1>'
 const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }
 
 const s2Style = {

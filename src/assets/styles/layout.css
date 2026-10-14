@@ -649,17 +649,6 @@
 	}
 }
 
-.grid-embed {
-	width: 100%;
-	height: var(--embed-height, 100%);
-}
-
-@media screen and (max-width: 920px) {
-	.grid-embed {
-		height: var(--m-embed-height, var(--embed-height, 100%));
-	}
-}
-
 @media screen and (max-width: 920px) {
 	.block-navigation__logo:has(.block-navigation__logo-image) {
 		width: var(--m-logo-width);
