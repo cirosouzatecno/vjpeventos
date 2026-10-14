@@ -1,5 +1,5 @@
 <template>
-  <div ref="rootRef" :class="className" :style="style" :data-element-id="elementId">
+  <div ref="rootRef" :class="className" :style="[style, { '--mobile-order': parseInt(style?.['--m-grid-row']) || 0 }]" :data-element-id="elementId">
     <div v-if="hasRotationFrame" class="layout-element__rotation-frame">
       <slot />
     </div>

@@ -112,3 +112,25 @@ onBeforeUnmount(() => { document.body.style.overflow = '' })
 @media screen and (max-width:920px){.natal-gallery{padding:72px 20px 88px}.natal-gallery__intro{display:block;margin-bottom:34px}.natal-gallery__hint{margin-top:20px;text-align:left}.natal-gallery__grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 12px}.natal-card--featured{grid-column:span 2}.natal-card__caption{padding-top:11px;font-size:20px}.natal-lightbox{padding:18px}.natal-lightbox__figure img{max-width:96vw;max-height:78vh}.natal-lightbox__close{top:12px;right:16px}}
 @media screen and (max-width:520px){.natal-gallery__grid{grid-template-columns:1fr}.natal-card--featured{grid-column:span 1}.natal-card__media,.natal-card--featured .natal-card__media{aspect-ratio:4/5}}
 </style>
+
+<style scoped>
+@media (max-width: 920px) {
+  .natal-gallery { padding: 32px 20px 44px; }
+  .natal-gallery__intro, .natal-gallery__grid { max-width: 640px; }
+  .natal-gallery__intro { margin-bottom: 28px; }
+  .natal-gallery h1 { font-size: clamp(32px, 7vw, 42px); line-height: 1.1; text-wrap: balance; }
+  .natal-gallery__hint { max-width: 34ch; font-size: 15px; line-height: 1.6; }
+  .natal-gallery__grid { gap: 28px 20px; }
+  .natal-card__media { border-radius: 8px; }
+  .natal-card__caption { font-size: 24px; line-height: 1.25; }
+  .natal-card__zoom { opacity: 1; background: rgb(1 36 14 / 75%); }
+  .natal-lightbox { z-index: 200; padding: 76px 16px max(24px, env(safe-area-inset-bottom)); overflow-y: auto; }
+  .natal-lightbox__figure { max-width: 100%; max-height: none; }
+  .natal-lightbox__figure img { max-width: 100%; max-height: 65dvh; }
+  .natal-lightbox__close { top: max(16px, env(safe-area-inset-top)); right: 16px; }
+}
+@media (max-width: 520px) {
+  .natal-card .natal-card__media { aspect-ratio: auto; }
+  .natal-card__media img { height: auto; }
+}
+</style>

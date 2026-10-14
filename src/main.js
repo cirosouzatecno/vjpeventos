@@ -3,6 +3,7 @@ import { createHead } from '@unhead/vue'
 import App from './App.vue'
 import router from './router/index.js'
 import './assets/styles/global.css'
+import './assets/styles/mobile.css'
 
 const app = createApp(App)
 const head = createHead()
