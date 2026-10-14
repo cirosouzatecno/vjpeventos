@@ -5,11 +5,6 @@
   >
     <Header />
     <div class="page__blocks">
-      <BlockLayout blockId="zvCXpp" htmlId="zvCXpp"
-        blockClassName="block block--desktop-first-visible block--mobile-first-visible"
-        innerClassName="block-layout block-layout--layout"
-        :blockStyle="heroStyle" :background="heroBg" />
-
       <BlockLayout blockId="zZvzii" htmlId="zZvzii" blockClassName="block"
         innerClassName="block-layout block-layout--layout"
         :blockStyle="s2Style" :background="darkBg" :isFixed="true">
@@ -33,7 +28,7 @@ import Footer from '@/pages/shared/Footer.vue'
 import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
 import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
-import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
+import { cssVars } from './shared/pageCommons.js'
 
 usePageSeo({
   title: "Festas em São José do Rio Preto | V J Produções e Eventos",

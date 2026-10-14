@@ -5,11 +5,6 @@
   >
     <Header />
     <div class="page__blocks">
-      <BlockLayout blockId="zCsrpX" htmlId="zCsrpX"
-        blockClassName="block block--desktop-first-visible block--mobile-first-visible"
-        innerClassName="block-layout block-layout--layout"
-        :blockStyle="heroStyle" :background="heroBg" />
-
       <BlockLayout blockId="z6-Kdp" htmlId="z6-Kdp" blockClassName="block"
         innerClassName="block-layout block-layout--layout"
         :blockStyle="s2Style" :background="darkBg" :isFixed="true">
@@ -54,7 +49,7 @@ import BlockLayout from '@/components/builder/layout/BlockLayout.vue'
 import LayoutElement from '@/components/builder/layout/LayoutElement.vue'
 import GridTextBox from '@/components/builder/elements/GridTextBox.vue'
 import GridVideo from '@/components/builder/elements/GridVideo.vue'
-import { cssVars, heroBg, heroStyle } from './shared/pageCommons.js'
+import { cssVars } from './shared/pageCommons.js'
 
 usePageSeo({
   title: "Decoração Residencial em São José do Rio Preto | V J Produções e Eventos",

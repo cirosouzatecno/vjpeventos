@@ -52,29 +52,3 @@ export const cssVars = {
   '--grid-button-secondary-text-transform': 'none', '--grid-button-secondary-background-color': 'transparent',
   '--grid-button-secondary-background-color-hover': 'rgba(139, 105, 20, 0.12)',
 }
-
-const heroSrcset = [
-  'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=375&fit=crop 375w',
-  'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=768&fit=crop 768w',
-  'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1024&fit=crop 1024w',
-  'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1440&fit=crop 1440w',
-  'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1920&fit=crop 1920w',
-  'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=2560&fit=crop 2560w',
-].join(', ')
-
-export const heroBg = {
-  current: 'image',
-  src: 'https://horizons-cdn.hostinger.com/9ff0c242-ec08-4248-b694-3de2ee09bf42/img-20260605-wa0001-E2V4bcFE1sMqHZLZ.jpg?width=1440&fit=crop',
-  srcset: heroSrcset,
-}
-
-export const heroStyle = {
-  '--rows': 11, '--width': '1224px', '--row-gap': '16px', '--row-size': '48px', '--column-gap': '24px',
-  '--block-padding': '16px 0',
-  '--m-block-padding': '120px 16px 120px 16px',
-  '--m-grid-template-rows': ' 1fr', '--t-grid-template-rows': ' 1fr',
-  '--small-desktop-grid-template-rows': ' 1fr', '--grid-template-rows': ' 1fr',
-  '--m-grid-template-columns': '100.00%', '--grid-template-columns': '100.00%',
-  '--m-block-min-height': '143px', '--t-block-min-height': '143px',
-  '--small-desktop-block-min-height': '59.80392156862745vw', '--block-min-height': '732px',
-}
