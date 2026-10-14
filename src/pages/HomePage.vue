@@ -11,8 +11,28 @@
         :blockStyle="s2Style" :background="{ color: 'rgb(0, 29, 13)', current: 'color' }"
       >
 
+        <LayoutElement elementId="zHomeShort" className="layout-element layout-element--layout"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 1, '--grid-row': '1/2', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2' }"
+          :hasRotationFrame="false" :hasEntranceAnimation="false">
+          <GridVideo id="zHomeShort"
+            src="https://www.youtube.com/embed/O1sKoeN-4mM?autoplay=1&controls=1&loop=1&playlist=O1sKoeN-4mM&mute=1&playsinline=1"
+            provider="youtube"
+            jpg="https://i.ytimg.com/vi/O1sKoeN-4mM/hqdefault.jpg"
+            webp="https://i.ytimg.com/vi_webp/O1sKoeN-4mM/hqdefault.webp"
+          />
+        </LayoutElement>
+        <LayoutElement elementId="zHomeVideo" className="layout-element layout-element--layout"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 2, '--grid-row': '3/4', '--grid-column': '3/4', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
+          :hasRotationFrame="false" :hasEntranceAnimation="false">
+          <GridVideo id="zHomeVideo"
+            src="https://www.youtube.com/embed/ENxamFIJknY?autoplay=0&controls=1&playsinline=1"
+            provider="youtube"
+            jpg="https://i.ytimg.com/vi/ENxamFIJknY/hqdefault.jpg"
+            webp="https://i.ytimg.com/vi_webp/ENxamFIJknY/hqdefault.webp"
+          />
+        </LayoutElement>
         <LayoutElement elementId="zPDJEu" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 3, '--grid-row': '1/2', '--grid-column': '2/5', '--m-grid-row': '1/2', '--m-grid-column': '1/2' }"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 3, '--grid-row': '5/6', '--grid-column': '2/5', '--m-grid-row': '5/6', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="zPDJEu"
             src="https://www.youtube.com/embed/m7OETuDX684?autoplay=0&controls=1&playsinline=1"
@@ -22,7 +42,7 @@
           />
         </LayoutElement>
         <LayoutElement elementId="z2a8vn" className="layout-element layout-element--layout"
-          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 4, '--grid-row': '3/4', '--grid-column': '3/4', '--m-grid-row': '3/4', '--m-grid-column': '1/2' }"
+          :style="{ '--align': 'center', '--justify': 'center', '--m-element-margin': '0 0 16px 0', '--z-index': 4, '--grid-row': '7/8', '--grid-column': '3/4', '--m-grid-row': '7/8', '--m-grid-column': '1/2' }"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
           <GridVideo id="z2a8vn"
             src="https://www.youtube.com/embed/jol6xQvyitk?autoplay=0&controls=1&playsinline=1"
