@@ -81,7 +81,6 @@ const useIframe = computed(() => {
 .grid-video--frameless{background:transparent;border-radius:0;box-shadow:none}
 .grid-video--frameless::after{display:none}
 .grid-video iframe,.grid-video video{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
-.grid-video.home-short-video iframe{width:178%;height:178%;max-width:none;transform:translate(-21.9%,-21.9%)}
 .grid-video__poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s ease,filter .7s ease;filter:saturate(.84)}
 .grid-video:hover .grid-video__poster{transform:scale(1.035);filter:saturate(1)}
 .grid-video button{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:64px;height:48px;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(23,55,42,.86);cursor:pointer;color:#fff;font-size:18px;transition:transform .25s ease,background .25s ease}
