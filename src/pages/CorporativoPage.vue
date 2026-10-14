@@ -21,32 +21,32 @@
         <LayoutElement elementId="z7nX1H" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':1,'--grid-row':'2/3','--grid-column':'2/3','--m-grid-row':'1/2','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="z7nX1H" src="https://www.youtube.com/embed/lLp8gHRiH-g?h=null&playlist=lLp8gHRiH-g&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/lLp8gHRiH-g/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/lLp8gHRiH-g/hqdefault.webp" />
+          <GridVideo id="z7nX1H" mobileRatio="9 / 16" src="https://www.youtube.com/embed/lLp8gHRiH-g?h=null&playlist=lLp8gHRiH-g&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/lLp8gHRiH-g/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/lLp8gHRiH-g/hqdefault.webp" />
         </LayoutElement>
         <LayoutElement elementId="z3qo2l" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':2,'--grid-row':'2/3','--grid-column':'4/5','--m-grid-row':'3/4','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="z3qo2l" src="https://www.youtube.com/embed/wnrmnXJ2Ky8?h=null&playlist=wnrmnXJ2Ky8&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/wnrmnXJ2Ky8/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/wnrmnXJ2Ky8/hqdefault.webp" />
+          <GridVideo id="z3qo2l" mobileRatio="9 / 16" src="https://www.youtube.com/embed/wnrmnXJ2Ky8?h=null&playlist=wnrmnXJ2Ky8&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/wnrmnXJ2Ky8/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/wnrmnXJ2Ky8/hqdefault.webp" />
         </LayoutElement>
         <LayoutElement elementId="zjwLFq" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':3,'--grid-row':'4/5','--grid-column':'2/3','--m-grid-row':'5/6','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zjwLFq" src="https://www.youtube.com/embed/Ggcp1TDyJhw?h=null&playlist=Ggcp1TDyJhw&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/Ggcp1TDyJhw/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/Ggcp1TDyJhw/hqdefault.webp" />
+          <GridVideo id="zjwLFq" mobileRatio="9 / 16" src="https://www.youtube.com/embed/Ggcp1TDyJhw?h=null&playlist=Ggcp1TDyJhw&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/Ggcp1TDyJhw/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/Ggcp1TDyJhw/hqdefault.webp" />
         </LayoutElement>
         <LayoutElement elementId="zEgELr" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':4,'--grid-row':'4/5','--grid-column':'4/5','--m-grid-row':'7/8','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zEgELr" src="https://www.youtube.com/embed/nZxVG5JVpMQ?h=null&playlist=nZxVG5JVpMQ&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/nZxVG5JVpMQ/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/nZxVG5JVpMQ/hqdefault.webp" />
+          <GridVideo id="zEgELr" mobileRatio="9 / 16" src="https://www.youtube.com/embed/nZxVG5JVpMQ?h=null&playlist=nZxVG5JVpMQ&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/nZxVG5JVpMQ/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/nZxVG5JVpMQ/hqdefault.webp" />
         </LayoutElement>
         <LayoutElement elementId="zy1r0x" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':5,'--grid-row':'6/7','--grid-column':'2/3','--m-grid-row':'9/10','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zy1r0x" src="https://www.youtube.com/embed/lLp8gHRiH-g?h=null&playlist=lLp8gHRiH-g&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/lLp8gHRiH-g/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/lLp8gHRiH-g/hqdefault.webp" />
+          <GridVideo id="zy1r0x" mobileRatio="9 / 16" src="https://www.youtube.com/embed/lLp8gHRiH-g?h=null&playlist=lLp8gHRiH-g&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/lLp8gHRiH-g/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/lLp8gHRiH-g/hqdefault.webp" />
         </LayoutElement>
         <LayoutElement elementId="zhvI27" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':6,'--grid-row':'7/8','--grid-column':'2/3','--m-grid-row':'11/12','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zhvI27" src="https://www.youtube.com/embed/ZJfyptWijm8?h=null&playlist=ZJfyptWijm8&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/ZJfyptWijm8/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/ZJfyptWijm8/hqdefault.webp" />
+          <GridVideo id="zhvI27" mobileRatio="9 / 16" src="https://www.youtube.com/embed/ZJfyptWijm8?h=null&playlist=ZJfyptWijm8&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/ZJfyptWijm8/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/ZJfyptWijm8/hqdefault.webp" />
         </LayoutElement>
       </BlockLayout>
 

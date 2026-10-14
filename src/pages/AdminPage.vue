@@ -611,3 +611,18 @@ onMounted(async () => {
 @media(max-width:1050px){.media-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.overview-grid{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:800px){.dashboard{grid-template-columns:1fr}.sidebar{position:fixed;left:0;top:0;width:min(84vw,300px);transform:translateX(-105%);transition:transform .2s ease}.sidebar--open{transform:translateX(0)}.sidebar__close{display:block;border:0;background:transparent;color:white;font-size:28px}.sidebar-backdrop{position:fixed;inset:0;z-index:30;display:block;background:rgba(0,0,0,.35)}.workspace{padding:24px 16px 54px}.menu-button{display:block}.topbar{align-items:flex-start}.topbar h1{font-size:34px}.topbar .primary{align-self:center;padding:11px 12px;font-size:10px}.table-row{grid-template-columns:1fr auto}.table-row .pill{display:none}.media-grid{grid-template-columns:1fr}.media-toolbar,.search{align-items:stretch;flex-direction:column}.form-grid{grid-template-columns:1fr}.login-card{padding:34px 24px}.login-card .brand{margin-bottom:52px}.login-card h1{font-size:40px}}
 </style>
+
+<style scoped>
+@media (max-width: 800px) {
+  input, select, textarea { font-size: 16px !important; }
+  button, .sidebar__footer a { min-height: 44px; }
+  .modal { padding: 16px; align-items: start; }
+  .modal-card { padding: 20px; margin-block: 16px; }
+  .modal-actions, .source-tabs, .media-card__actions { flex-wrap: wrap; }
+  .topbar { flex-wrap: wrap; gap: 12px; }
+  .topbar h1 { font-size: clamp(26px, 7vw, 34px); overflow-wrap: anywhere; }
+  .panel { padding: 20px 16px; }
+  .table-row__main { min-width: 0; overflow-wrap: anywhere; }
+  .login-card { width: min(100%, 480px); }
+}
+</style>

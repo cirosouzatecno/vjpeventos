@@ -2,13 +2,14 @@
   <div
     class="grid-video"
     :data-element-id="id"
-    :class="{ 'grid-video--playing': isPlaying, 'grid-video--frameless': frameless }"
+    :style="{ '--mobile-video-ratio': mobileRatio }"
+    :class="{ 'grid-video--playing': isPlaying, 'grid-video--frameless': frameless, 'grid-video--portrait': mobileRatio === '9 / 16' }"
   >
     <template v-if="src">
       <template v-if="useIframe">
         <iframe
           v-if="isPlaying || !jpg"
-          title="Video"
+          title="Vídeo de evento"
           :src="src"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowfullscreen
@@ -23,7 +24,7 @@
           />
           <button
             type="button"
-            aria-label="Play video"
+            aria-label="Reproduzir vídeo"
             @click="isPlaying = true"
             style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:68px;height:48px;border:0;border-radius:8px;background:rgba(30,30,30,0.85);cursor:pointer;color:#fff;font-size:20px"
           >▶</button>
@@ -50,6 +51,7 @@ import { ref, computed } from 'vue'
 
 const props = defineProps({
   id: String,
+  mobileRatio: { type: String, default: '16 / 9' },
   src: { type: String, default: '' },
   provider: { type: String, default: 'youtube' },
   jpg: { type: String, default: '' },

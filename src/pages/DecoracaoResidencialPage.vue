@@ -21,7 +21,7 @@
         <LayoutElement elementId="zCN8JA" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':1,'--grid-row':'2/3','--grid-column':'2/3','--m-grid-row':'4/5','--m-grid-column':'3/4'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zCN8JA" src="https://www.youtube.com/embed/ajECYFgRKGI?h=null&playlist=ajECYFgRKGI&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/ajECYFgRKGI/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/ajECYFgRKGI/hqdefault.webp" />
+          <GridVideo id="zCN8JA" mobileRatio="9 / 16" src="https://www.youtube.com/embed/ajECYFgRKGI?h=null&playlist=ajECYFgRKGI&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/ajECYFgRKGI/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/ajECYFgRKGI/hqdefault.webp" />
         </LayoutElement>
         <LayoutElement elementId="zQYGif" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':2,'--grid-row':'3/4','--grid-column':'2/3','--m-grid-row':'6/7','--m-grid-column':'2/5'}"
@@ -31,7 +31,7 @@
         <LayoutElement elementId="zSN1JY" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':3,'--grid-row':'4/5','--grid-column':'2/3','--m-grid-row':'2/3','--m-grid-column':'3/4'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zSN1JY" src="https://www.youtube.com/embed/UhFUI6uWPKU?h=null&playlist=UhFUI6uWPKU&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/UhFUI6uWPKU/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/UhFUI6uWPKU/hqdefault.webp" />
+          <GridVideo id="zSN1JY" mobileRatio="9 / 16" src="https://www.youtube.com/embed/UhFUI6uWPKU?h=null&playlist=UhFUI6uWPKU&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/UhFUI6uWPKU/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/UhFUI6uWPKU/hqdefault.webp" />
         </LayoutElement>
       </BlockLayout>
 

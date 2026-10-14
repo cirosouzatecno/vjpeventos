@@ -21,7 +21,7 @@
         <LayoutElement elementId="zGn28l" className="layout-element layout-element--layout"
           :style="{'--align':'center','--justify':'center','--m-element-margin':'0 0 16px 0','--z-index':1,'--grid-row':'2/3','--grid-column':'2/3','--m-grid-row':'2/3','--m-grid-column':'1/2'}"
           :hasRotationFrame="false" :hasEntranceAnimation="false">
-          <GridVideo id="zGn28l" src="https://www.youtube.com/embed/aLMI6EK5VWo?h=null&playlist=aLMI6EK5VWo&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/aLMI6EK5VWo/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/aLMI6EK5VWo/hqdefault.webp" />
+          <GridVideo id="zGn28l" mobileRatio="9 / 16" src="https://www.youtube.com/embed/aLMI6EK5VWo?h=null&playlist=aLMI6EK5VWo&autoplay=0&controls=1&loop=0&autopause=0&playsinline=1&mute=0" provider="youtube" jpg="https://i.ytimg.com/vi/aLMI6EK5VWo/hqdefault.jpg" webp="https://i.ytimg.com/vi_webp/aLMI6EK5VWo/hqdefault.webp" />
         </LayoutElement>
       </BlockLayout>
 

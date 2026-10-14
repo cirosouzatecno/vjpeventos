@@ -4,7 +4,7 @@
   <BlockLayout
     blockId="zRgwg5"
     htmlId="zRgwg5"
-    blockClassName="block"
+    blockClassName="block site-footer"
     innerClassName="block-layout block-layout--layout"
     :blockStyle="blockStyle"
     :background="{ color: 'rgb(10, 18, 12)', current: 'color' }"
