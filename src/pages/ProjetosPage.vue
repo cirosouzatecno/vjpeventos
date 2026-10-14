@@ -47,13 +47,13 @@ import GridVideo from '@/components/builder/elements/GridVideo.vue'
 import { cssVars } from './shared/pageCommons.js'
 
 usePageSeo({
-  title: "Projetos de Eventos em São José do Rio Preto | V J Produções e Eventos",
+  title: "Projetos de Eventos | V J Produções e Eventos",
   description: "Conheça projetos de decoração e ambientação da V J Produções e Eventos para festas, cerimônias e eventos em São José do Rio Preto - SP.",
   path: "/projetos",
   serviceName: "Projetos de Decoração de Eventos",
 })
 
-const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Projetos de Decoração de Eventos em São José do Rio Preto - SP</h1>'
+const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Projetos de Decoração de Eventos</h1>'
 
 const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }
 

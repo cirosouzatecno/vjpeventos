@@ -12,7 +12,7 @@
       <main class="natal-page">
         <section id="galeria-natal" class="natal-gallery" aria-labelledby="galeria-title">
           <div class="natal-gallery__intro">
-            <div><p class="natal-kicker natal-kicker--dark">Inspirações</p><h1 id="galeria-title">Decoração de Natal em São José do Rio Preto - SP</h1></div>
+            <div><p class="natal-kicker natal-kicker--dark">Inspirações</p><h1 id="galeria-title">Decoração de Natal</h1></div>
             <p class="natal-gallery__hint">Clique em qualquer imagem para visualizar em tamanho maior.</p>
           </div>
           <div class="natal-gallery__grid">
@@ -52,7 +52,7 @@ import image9 from '@/assets/natal/9.jpg'
 import image11 from '@/assets/natal/11.jpg'
 
 usePageSeo({
-  title: "Decoração de Natal em São José do Rio Preto | V J Produções e Eventos",
+  title: "Decoração de Natal | V J Produções e Eventos",
   description: "Decoração de Natal em São José do Rio Preto - SP para residências, empresas e eventos, com projetos personalizados e ambientações especiais.",
   path: "/especial-natal",
   serviceName: "Decoração de Natal",

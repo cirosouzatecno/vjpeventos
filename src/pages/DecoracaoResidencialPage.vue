@@ -52,13 +52,13 @@ import GridVideo from '@/components/builder/elements/GridVideo.vue'
 import { cssVars } from './shared/pageCommons.js'
 
 usePageSeo({
-  title: "Decoração Residencial em São José do Rio Preto | V J Produções e Eventos",
+  title: "Decoração Residencial | V J Produções e Eventos",
   description: "Projetos de decoração residencial e ambientação em São José do Rio Preto - SP, desenvolvidos pela V J Produções e Eventos com atenção aos detalhes.",
   path: "/decoracao-residencial",
   serviceName: "Decoração Residencial",
 })
 
-const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração Residencial em São José do Rio Preto - SP</h1>'
+const s2Title = '<h1 dir="auto" style="color: rgb(255, 255, 255); --lineHeightDesktop: 1.2; --fontSizeDesktop: 44px; --lineHeightMobile: 1.3; --fontSizeMobile: 24px; font-style: normal; font-weight: 600;">Decoração Residencial</h1>'
 const darkBg = { color: 'rgb(1, 36, 14)', current: 'color' }
 
 const s2Style = {
