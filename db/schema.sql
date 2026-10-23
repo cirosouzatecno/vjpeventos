@@ -49,3 +49,11 @@ create table if not exists media_items (
 create index if not exists media_items_category_idx on media_items(category_id);
 create index if not exists media_items_featured_idx on media_items(featured);
 create index if not exists media_items_sort_idx on media_items(category_id, sort_order);
+
+alter table media_items add column if not exists source_key text;
+create unique index if not exists media_items_source_key_idx on media_items(source_key) where source_key is not null;
+
+create table if not exists cms_migrations (
+  key text primary key,
+  applied_at timestamptz not null default now()
+);
