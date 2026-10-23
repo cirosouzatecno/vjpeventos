@@ -7,6 +7,7 @@
     title="Abrir WhatsApp"
     target="_blank"
     aria-label="Abrir WhatsApp"
+    @click="trackContactConversion"
   >
     <svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="32" cy="32" r="32" fill="#1f3624" />
@@ -24,4 +25,14 @@ import { whatsAppNumber, whatsAppMessage, isFloatingWhatsAppWidgetEnabled } from
 import { buildWhatsAppUrl } from './whatsAppUrl.js'
 
 const href = computed(() => buildWhatsAppUrl(whatsAppNumber, whatsAppMessage, isFloatingWhatsAppWidgetEnabled))
+
+function trackContactConversion() {
+  if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
+    window.gtag('event', 'conversion', {
+      send_to: 'AW-17485736302/Wnp5CLyA3JccEO7S7JFB',
+      value: 2.0,
+      currency: 'BRL',
+    })
+  }
+}
 </script>
