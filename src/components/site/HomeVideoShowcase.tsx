@@ -54,9 +54,32 @@ declare global {
 
 export const HomeVideoShowcase: React.FC = () => {
   const playersRef = useRef<{ [key: number]: any }>({})
+  const sectionRef = useRef<HTMLSectionElement>(null)
   const [apiReady, setApiReady] = useState<boolean>(false)
   const [loadedPlayers, setLoadedPlayers] = useState<Set<number>>(new Set())
   const [enteringIndex, setEnteringIndex] = useState<number | null>(null)
+  const [isVisible, setIsVisible] = useState<boolean>(false)
+
+  // IntersectionObserver - trigger animations when section enters viewport
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+            observer.unobserve(section) // Only trigger once
+          }
+        })
+      },
+      { threshold: 0.15, rootMargin: '0px 0px -50px 0px' }
+    )
+
+    observer.observe(section)
+    return () => observer.disconnect()
+  }, [])
 
   // Load YouTube IFrame API
   useEffect(() => {
@@ -177,7 +200,11 @@ export const HomeVideoShowcase: React.FC = () => {
   }, [apiReady])
 
   return (
-    <section className="home-video-showcase" aria-label="Vídeos em destaque da V J Produções">
+    <section
+      ref={sectionRef}
+      className={`home-video-showcase ${isVisible ? 'animations-active' : ''}`}
+      aria-label="Vídeos em destaque da V J Produções"
+    >
       <div className="home-video-showcase__list">
         {VIDEOS.map((video, index) => {
           const isVertical = video.format === 'vertical'

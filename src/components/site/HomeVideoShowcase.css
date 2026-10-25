@@ -21,18 +21,24 @@
   align-items: center;
   scroll-margin-top: 130px;
   transition: transform 0.3s ease;
-  /* Entrance animation */
+  /* Default state - visible, no animation */
+  opacity: 1;
+  transform: none;
+}
+
+/* Animations only trigger when section enters viewport */
+.animations-active .video-item-card {
   opacity: 0;
   transform: translateY(40px);
   animation: fadeSlideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.video-item-card:nth-child(1) { animation-delay: 0.1s; }
-.video-item-card:nth-child(2) { animation-delay: 0.25s; }
-.video-item-card:nth-child(3) { animation-delay: 0.4s; }
-.video-item-card:nth-child(4) { animation-delay: 0.55s; }
-.video-item-card:nth-child(5) { animation-delay: 0.7s; }
-.video-item-card:nth-child(6) { animation-delay: 0.85s; }
+.animations-active .video-item-card:nth-child(1) { animation-delay: 0.1s; }
+.animations-active .video-item-card:nth-child(2) { animation-delay: 0.25s; }
+.animations-active .video-item-card:nth-child(3) { animation-delay: 0.4s; }
+.animations-active .video-item-card:nth-child(4) { animation-delay: 0.55s; }
+.animations-active .video-item-card:nth-child(5) { animation-delay: 0.7s; }
+.animations-active .video-item-card:nth-child(6) { animation-delay: 0.85s; }
 
 @keyframes fadeSlideUp {
   to {
@@ -41,7 +47,7 @@
   }
 }
 
-/* Border reveal effect */
+/* Border reveal effect - only when animations active */
 .video-frame {
   position: relative;
 }
@@ -54,10 +60,15 @@
   border: 2px solid var(--vj-gold);
   transform: scaleX(0);
   transform-origin: left;
-  animation: borderDraw 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  animation-delay: calc(var(--reveal-delay, 0) + 0.3s);
   pointer-events: none;
   z-index: 1;
+  opacity: 0;
+  /* No animation by default */
+}
+
+.animations-active .video-frame::before {
+  animation: borderDraw 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation-delay: calc(var(--reveal-delay, 0) + 0.3s);
   opacity: 0;
 }
 
@@ -119,7 +130,9 @@
 /* Respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .video-item-card,
+  .animations-active .video-item-card,
   .video-frame::before,
+  .animations-active .video-frame::before,
   .video-skeleton {
     animation: none !important;
     opacity: 1;
@@ -127,6 +140,10 @@
   }
   .video-skeleton { display: none; }
   .video-frame::before { display: none; }
+  .animations-active .video-item-card {
+    opacity: 1;
+    transform: none;
+  }
 }
 
 /* Horizontal video player frame */
