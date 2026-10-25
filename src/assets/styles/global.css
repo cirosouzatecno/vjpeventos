@@ -7,6 +7,10 @@
 	--color-success-dark: #008361;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 *,
 *::before,
 *::after {
@@ -35,10 +39,34 @@ body {
 	color: var(--body-color, #1d1e20);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
+}
+
+::-webkit-scrollbar {
+	width: 10px;
+	height: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #01240e;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #c4a44a;
+	border: 2px solid #01240e;
+	border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #a77b38;
 }
 
 .page {
 	font-family: var(--body-font-family, inherit);
+}
+
+.page .text-box h1 {
+	text-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
 }
 
 
@@ -218,6 +246,7 @@ a {
 
 .page h1 {
 	font-style: italic;
+	letter-spacing: -0.02em;
 }
 
 .page h6 {

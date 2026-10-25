@@ -289,11 +289,14 @@
 }
 
 .top-blocks.top-blocks--opaque {
-	background-color: var(--nav-bg, #ffffff);
+	background-color: rgba(1, 36, 14, 0.85) !important;
+	border-bottom: 1px solid rgba(196, 164, 74, 0.15);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
 }
 
 .top-blocks--with-shadow {
-	box-shadow: 0 1px 3px rgb(0 0 0 / 12%);
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 .sticky-trigger {
